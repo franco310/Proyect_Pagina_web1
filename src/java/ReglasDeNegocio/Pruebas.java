@@ -73,20 +73,29 @@ public class Pruebas {
 //}
 // INSERTAR
 /*Producto obj=new Producto();
-obj.setNombreproducto("Cable USB");
+obj.setNombreproducto("tela");
 
   Producto.producto_insertar(obj);
-    
-  */
+    */
+  
  // INSERTAR
  
-/*Cliente obj1=new Cliente();
-obj1.setNombres("Francisco");
+Cliente obj1=new Cliente();
+obj1.setNombres("Klever");
 obj1.setApellidos("Chaves");
-obj1.setTelefono("0984719379");
+obj1.setTelefono("0984719373");
 obj1.setEmail("franco10_@outlook.com");
-Cliente.cliente_insertar(obj1);*/
+Cliente.cliente_insertar(obj1);
  
-Cliente.cliente_eliminar(2);
-    }
-}
+//Cliente.cliente_eliminar(2);
+    
+
+
+// INSERTAR
+/*
+Categoria obj2=new Categoria();
+obj2.setNombre("hilo de seda");
+
+Categoria.categoria_insertar (obj2);
+*/
+    }}

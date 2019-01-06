@@ -74,7 +74,7 @@ public class Cliente {
     {
          //CREO LISTA QUE RECIBIRA LOS DATOS DEL RESULSET
         ArrayList<Cliente> lista= new ArrayList<Cliente>();
-          Cliente obj= new Cliente();
+          Cliente obj1= new Cliente();
        ResultSet rs= null;
       //LLAMO LA CONEXION
       Conexion con= new Conexion(Global.driver, Global.url, Global.user, Global.pass);
@@ -88,15 +88,15 @@ public class Cliente {
           preStm=con.creaPreparedSmt(sql);
           //ejecuto el prepardestatement y le asigno a mi resulset  
           rs= con.ejecutaPrepared(preStm);
-          obj=null;
+          obj1=null;
           while (rs.next()) {
-              obj= new Cliente();
-              obj.setClienteid(rs.getInt("pclienteid"));
-              obj.setNombres(rs.getString("pnombres"));
-              obj.setApellidos(rs.getString("papellidos"));
-              obj.setTelefono(rs.getString("ptelefono"));
-              obj.setEmail(rs.getString("pemail"));
-              lista.add(obj);
+              obj1= new Cliente();
+              obj1.setClienteid(rs.getInt("pclienteid"));
+              obj1.setNombres(rs.getString("pnombres"));
+              obj1.setApellidos(rs.getString("papellidos"));
+              obj1.setTelefono(rs.getString("ptelefono"));
+              obj1.setEmail(rs.getString("pemail"));
+              lista.add(obj1);
           }
       } catch (SQLException e) {
           System.out.println(e.getMessage());
@@ -115,7 +115,7 @@ public class Cliente {
     {
          //CREO LISTA QUE RECIBIRA LOS DATOS DEL RESULSET
         ArrayList<Cliente> lista= new ArrayList<Cliente>();
-          Cliente obj= new Cliente();
+          Cliente obj1= new Cliente();
        ResultSet rs= null;
       //LLAMO LA CONEXION
       Conexion con= new Conexion(Global.driver, Global.url, Global.user, Global.pass);
@@ -130,16 +130,16 @@ public class Cliente {
           //ejecuto el prepardestatement y le asigno a mi resulset
           preStm.setInt(1,piclienteid);
           rs= con.ejecutaPrepared(preStm);
-          obj=null;
+          obj1=null;
           while (rs.next()) {
-              obj= new Cliente();
-              obj.setClienteid(rs.getInt("pclienteid"));
-              obj.setNombres(rs.getString("pnombres"));
-              obj.setApellidos(rs.getString("papellidos"));
-              obj.setTelefono(rs.getString("ptelefono"));
-              obj.setEmail(rs.getString("pemail"));
+              obj1= new Cliente();
+              obj1.setClienteid(rs.getInt("pclienteid"));
+              obj1.setNombres(rs.getString("pnombres"));
+              obj1.setApellidos(rs.getString("papellidos"));
+              obj1.setTelefono(rs.getString("ptelefono"));
+              obj1.setEmail(rs.getString("pemail"));
               
-              lista.add(obj);
+              lista.add(obj1);
           }
       } catch (SQLException e) {
           System.out.println(e.getMessage());

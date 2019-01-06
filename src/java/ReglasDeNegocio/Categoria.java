@@ -1,84 +1,56 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package ReglasDeNegocio;
-import AccesoADatos.*;
-import java.sql.*;
-import java.util.*;
 
-public class Venta {
-    private int ventaid;
-    private int clienteid;
-    private int productoid;
-    private int cantidad;
-    private double preciounitarioventa;
-    private String numerofactura;
+import AccesoADatos.Comando;
+import AccesoADatos.Conexion;
+import AccesoADatos.Global;
+import AccesoADatos.Parametro;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
 
-    public Venta() {
+/**
+ *
+ * @author Franco-Pc
+ */
+public class Categoria {
+    private int categoria_id;
+    private String nombre;
+
+    public Categoria() {
     }
 
-    public Venta(int ventaid, int clienteid, int productoid, int cantidad, double preciounitarioventa, String numerofactura) {
-        this.ventaid = ventaid;
-        this.clienteid = clienteid;
-        this.productoid = productoid;
-        this.cantidad = cantidad;
-        this.preciounitarioventa = preciounitarioventa;
-        this.numerofactura = numerofactura;
-    }
-     
-    public int getVentaid() {
-        return ventaid;
+    public Categoria(int categoria_id, String nombre) {
+        this.categoria_id = categoria_id;
+        this.nombre = nombre;
     }
 
-    public void setVentaid(int ventaid) {
-        this.ventaid = ventaid;
+    public int getCategoria_id() {
+        return categoria_id;
     }
 
-    public int getClienteid() {
-        return clienteid;
+    public void setCategoria_id(int categoria_id) {
+        this.categoria_id = categoria_id;
     }
 
-    public void setClienteid(int clienteid) {
-        this.clienteid = clienteid;
+    public String getNombre() {
+        return nombre;
     }
 
-    public int getProductoid() {
-        return productoid;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
-
-    public void setProductoid(int productoid) {
-        this.productoid = productoid;
-    }
-
-    public int getCantidad() {
-        return cantidad;
-    }
-
-    public void setCantidad(int cantidad) {
-        this.cantidad = cantidad;
-    }
-
-    public double getPreciounitarioventa() {
-        return preciounitarioventa;
-    }
-
-    public void setPreciounitarioventa(double preciounitarioventa) {
-        this.preciounitarioventa = preciounitarioventa;
-    }
-
-    public String getNumerofactura() {
-        return numerofactura;
-    }
-
-    public void setNumerofactura(String numerofactura) {
-        this.numerofactura = numerofactura;
-    }
-   
     
-   
-    
-    public static ArrayList<Venta> venta_buscartodos() throws Exception
+    public static ArrayList<Categoria> categoria_buscartodos() throws Exception
     {
          //CREO LISTA QUE RECIBIRA LOS DATOS DEL RESULSET
-        ArrayList<Venta> lista= new ArrayList<Venta>();
-          Venta obj= new Venta();
+        ArrayList<Categoria> lista= new ArrayList<Categoria>();
+          Categoria obj= new Categoria();
        ResultSet rs= null;
       //LLAMO LA CONEXION
       Conexion con= new Conexion(Global.driver, Global.url, Global.user, Global.pass);
@@ -87,7 +59,7 @@ public class Venta {
 
       try {
           //declaro mi sql
-          String sql= "select * from public.venta_buscartodos()";
+          String sql= "select * from public.categoria_buscartodos()";
           //creo mi preparedstatement
           preStm=con.creaPreparedSmt(sql);
           //ejecuto el prepardestatement y le asigno a mi resulset
@@ -95,13 +67,9 @@ public class Venta {
           rs= con.ejecutaPrepared(preStm);
           obj=null;
           while (rs.next()) {
-              obj= new Venta();
-              obj.setProductoid(rs.getInt("pventaid"));
-              obj.setClienteid(rs.getInt("pclienteid"));
-              obj.setProductoid(rs.getInt("pproductoid"));
-              obj.setCantidad(rs.getInt("pcantidad"));
-              obj.setPreciounitarioventa(rs.getFloat("ppreciounitarioventa"));
-              obj.setNumerofactura(rs.getString("pnumerofactura"));
+              obj= new Categoria();
+              obj.setCategoria_id(rs.getInt("pcategoria_id"));
+              obj.setNombre(rs.getString("pnombre"));
               
               lista.add(obj);
           }
@@ -118,11 +86,11 @@ public class Venta {
 
     }
     
-    public static ArrayList<Venta> venta_buscarporid(int piproductoid) throws Exception
+    public static ArrayList<Categoria> categoria_buscarporid(int picategoria_id) throws Exception
     {
          //CREO LISTA QUE RECIBIRA LOS DATOS DEL RESULSET
-        ArrayList<Venta> lista= new ArrayList<Venta>();
-          Venta obj= new Venta();
+        ArrayList<Categoria> lista= new ArrayList<Categoria>();
+          Categoria obj= new Categoria();
        ResultSet rs= null;
       //LLAMO LA CONEXION
       Conexion con= new Conexion(Global.driver, Global.url, Global.user, Global.pass);
@@ -131,21 +99,17 @@ public class Venta {
        
       try {
           //declaro mi sql
-          String sql= "select * from public.producto_buscarporid(?)";
+          String sql= "select * from public.categoria_buscarporid(?)";
           //creo mi preparedstatement
           preStm=con.creaPreparedSmt(sql);
           //ejecuto el prepardestatement y le asigno a mi resulset
-          preStm.setInt(1, piproductoid);
+          preStm.setInt(1, picategoria_id);
           rs= con.ejecutaPrepared(preStm);
           obj=null;
           while (rs.next()) {
-              obj= new Venta();
-              obj.setProductoid(rs.getInt("pventaid"));
-              obj.setClienteid(rs.getInt("pclienteid"));
-              obj.setProductoid(rs.getInt("pproductoid"));
-              obj.setCantidad(rs.getInt("pcantidad"));
-              obj.setPreciounitarioventa(rs.getFloat("ppreciounitarioventa"));
-              obj.setNumerofactura(rs.getString("pnumerofactura"));
+              obj= new Categoria();
+              obj.setCategoria_id(rs.getInt("pcategoria_id"));
+              obj.setNombre(rs.getString("pnombre"));
               
               lista.add(obj);
           }
@@ -162,8 +126,7 @@ public class Venta {
 
     }
     
-    
-     public static boolean venta_insertar(Venta venta) throws Exception
+     public static boolean categoria_insertar(Categoria categoria) throws Exception
   {
       boolean respuesta=false;
       Conexion con = new Conexion(Global.driver, Global.url, Global.user, Global.pass);
@@ -173,15 +136,11 @@ public class Venta {
           //CREAMOS EL PRIMER COMANDO QUE SERA AÃ‘ADIDO AL ARRAYLIST D COMANDOS
           Comando cmd= new Comando();
           //SETEAMOS LA FUNCION AL COMAND0
-          cmd.setSetenciaSql("select * from public.venta_insertar(?,?,?,?,?)");
+          cmd.setSetenciaSql("select * from public.categoria_insertar(?)");
           //CREAMOS EL ARRALIST DE PARAMETROS PARA ASIGANR A MI PRIMER COMANDO
           ArrayList<Parametro> parametros = new ArrayList<Parametro>();
           //llenamos el arraylist con todos los parametros
-          parametros.add(new Parametro(1, venta.getClienteid()));
-          parametros.add(new Parametro(2, venta.getProductoid()));
-          parametros.add(new Parametro(3, venta.getCantidad()));
-          parametros.add(new Parametro(4, venta.getPreciounitarioventa()));
-          parametros.add(new Parametro(5, venta.getNumerofactura()));
+          parametros.add(new Parametro(1, categoria.getNombre()));
           
 
           //llenar el comando con los parametros
@@ -201,7 +160,7 @@ public class Venta {
 
   }
     
-     public static boolean venta_editar(Venta venta) throws Exception
+     public static boolean categoria_editar(Categoria categoria) throws Exception
   {
       boolean respuesta=false;
       Conexion con = new Conexion(Global.driver, Global.url, Global.user, Global.pass);
@@ -211,17 +170,13 @@ public class Venta {
           //CREAMOS EL PRIMER COMANDO QUE SERA AÃ‘ADIDO AL ARRAYLIST D COMANDOS
           Comando cmd= new Comando();
           //SETEAMOS LA FUNCION AL COMAND0
-          cmd.setSetenciaSql("select * from public.venta_editar(?,?,?,?,?,?)");
+          cmd.setSetenciaSql("select * from public.categoria_editar(?,?)");
           //CREAMOS EL ARRALIST DE PARAMETROS PARA ASIGANR A MI PRIMER COMANDO
           ArrayList<Parametro> parametros = new ArrayList<Parametro>();
           //llenamos el arraylist con todos los parametros
 
-          parametros.add(new Parametro(1, venta.getVentaid()));
-          parametros.add(new Parametro(2, venta.getClienteid()));
-          parametros.add(new Parametro(3, venta.getProductoid()));
-          parametros.add(new Parametro(4, venta.getCantidad()));
-          parametros.add(new Parametro(5, venta.getPreciounitarioventa()));
-          parametros.add(new Parametro(6, venta.getNumerofactura()));
+          parametros.add(new Parametro(1, categoria.getCategoria_id()));
+          parametros.add(new Parametro(2, categoria.getNombre()));
         
           
           //llenar el comando con los parametros
@@ -241,7 +196,7 @@ public class Venta {
 
   }
      
-      public static boolean venta_eliminar(int pscactbevidenid) throws Exception
+      public static boolean categoria_eliminar(int pscactbevidenid) throws Exception
   {
       boolean respuesta=false;
       Conexion con = new Conexion(Global.driver, Global.url, Global.user, Global.pass);
@@ -251,7 +206,7 @@ public class Venta {
           //CREAMOS EL PRIMER COMANDO QUE SERA AÃ‘ADIDO AL ARRAYLIST D COMANDOS
           Comando cmd= new Comando();
           //SETEAMOS LA FUNCION AL COMAND0
-          cmd.setSetenciaSql("select * from public.venta_eliminar(?)");
+          cmd.setSetenciaSql("select * from public.categoria_eliminar(?)");
           //CREAMOS EL ARRALIST DE PARAMETROS PARA ASIGANR A MI PRIMER COMANDO
           ArrayList<Parametro> parametros = new ArrayList<Parametro>();
           //llenamos el arraylist con todos los parametros
@@ -272,4 +227,15 @@ public class Venta {
       return respuesta;
 
   }
+    
 }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
