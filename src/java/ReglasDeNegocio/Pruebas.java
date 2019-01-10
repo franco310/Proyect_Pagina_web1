@@ -78,7 +78,7 @@ obj.setNombreproducto("tela");
   Producto.producto_insertar(obj);
     */
   
- // INSERTAR
+  //INSERTAR
  
 Cliente obj1=new Cliente();
 obj1.setNombres("Klever");
@@ -87,7 +87,15 @@ obj1.setTelefono("0984719373");
 obj1.setEmail("franco10_@outlook.com");
 Cliente.cliente_insertar(obj1);
  
-//Cliente.cliente_eliminar(2);
+Cliente.cliente_eliminar(2);
+
+////INSERTAR PROVEEDOR
+//Proveedor obj2=new Proveedor();
+//obj2.setNombreproveedor("Flavio Tapuy");
+//obj2.setDireccion("21 de abril");
+//obj2.setTelefono("123456765");
+//
+//Proveedor.proveedor_insertar(obj2);
     
 
 
