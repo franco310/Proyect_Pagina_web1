@@ -16,11 +16,11 @@ import java.util.ArrayList;
 
 /**
  *
- * @author Franco-Pc
+ * @author SYSTEMarket-pc
  */
 public class Cliente {
-  private int clienteid  ;
-  private String  nombres ;
+  private int clienteid; 
+  private String nombres;
   private String apellidos;
   private String telefono;
   private String email;
@@ -28,53 +28,89 @@ public class Cliente {
     public Cliente() {
     }
 
+    public Cliente(int clienteid, String nombres, String apellidos, String telefono, String email) {
+        this.clienteid = clienteid;
+        this.nombres = nombres;
+        this.apellidos = apellidos;
+        this.telefono = telefono;
+        this.email = email;
+    }
+
+    /**
+     * @return the clienteid
+     */
     public int getClienteid() {
         return clienteid;
     }
 
+    /**
+     * @param clienteid the clienteid to set
+     */
     public void setClienteid(int clienteid) {
         this.clienteid = clienteid;
     }
 
+    /**
+     * @return the nombres
+     */
     public String getNombres() {
         return nombres;
     }
 
+    /**
+     * @param nombres the nombres to set
+     */
     public void setNombres(String nombres) {
         this.nombres = nombres;
     }
 
+    /**
+     * @return the apellidos
+     */
     public String getApellidos() {
         return apellidos;
     }
 
+    /**
+     * @param apellidos the apellidos to set
+     */
     public void setApellidos(String apellidos) {
         this.apellidos = apellidos;
     }
 
+    /**
+     * @return the telefono
+     */
     public String getTelefono() {
         return telefono;
     }
 
+    /**
+     * @param telefono the telefono to set
+     */
     public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
 
+    /**
+     * @return the email
+     */
     public String getEmail() {
         return email;
     }
 
+    /**
+     * @param email the email to set
+     */
     public void setEmail(String email) {
         this.email = email;
     }
-    
-    
-    //arrays
-    public static ArrayList<Cliente> cliente_buscartodos() throws Exception
+  
+  public static ArrayList<Cliente> cliente_buscartodos() throws Exception
     {
          //CREO LISTA QUE RECIBIRA LOS DATOS DEL RESULSET
         ArrayList<Cliente> lista= new ArrayList<Cliente>();
-          Cliente obj1= new Cliente();
+          Cliente obj= new Cliente();
        ResultSet rs= null;
       //LLAMO LA CONEXION
       Conexion con= new Conexion(Global.driver, Global.url, Global.user, Global.pass);
@@ -83,20 +119,22 @@ public class Cliente {
 
       try {
           //declaro mi sql
-          String sql= "select * from public.cliente_buscartodos()";
+          String sql= "select * from clientes_buscartodos()";
           //creo mi preparedstatement
           preStm=con.creaPreparedSmt(sql);
-          //ejecuto el prepardestatement y le asigno a mi resulset  
+          //ejecuto el prepardestatement y le asigno a mi resulset
+          
           rs= con.ejecutaPrepared(preStm);
-          obj1=null;
+          obj=null;
           while (rs.next()) {
-              obj1= new Cliente();
-              obj1.setClienteid(rs.getInt("pclienteid"));
-              obj1.setNombres(rs.getString("pnombres"));
-              obj1.setApellidos(rs.getString("papellidos"));
-              obj1.setTelefono(rs.getString("ptelefono"));
-              obj1.setEmail(rs.getString("pemail"));
-              lista.add(obj1);
+              obj= new Cliente();
+              obj.setClienteid(rs.getInt("pclienteid"));
+              obj.setNombres(rs.getString("pnombres"));
+              obj.setApellidos(rs.getString("papellidos"));
+              obj.setTelefono(rs.getString("ptelefono"));
+              obj.setEmail(rs.getString("pemail"));
+              
+              lista.add(obj);
           }
       } catch (SQLException e) {
           System.out.println(e.getMessage());
@@ -110,12 +148,10 @@ public class Cliente {
             return lista;
 
     }
-    
-    public static ArrayList<Cliente> cliente_buscarporid(int piclienteid) throws Exception
+    public static Cliente cliente_buscarporid(int piclienteid) throws Exception
     {
          //CREO LISTA QUE RECIBIRA LOS DATOS DEL RESULSET
-        ArrayList<Cliente> lista= new ArrayList<Cliente>();
-          Cliente obj1= new Cliente();
+          Cliente obj= new Cliente();
        ResultSet rs= null;
       //LLAMO LA CONEXION
       Conexion con= new Conexion(Global.driver, Global.url, Global.user, Global.pass);
@@ -124,22 +160,21 @@ public class Cliente {
        
       try {
           //declaro mi sql
-          String sql= "select * from public.cliente_buscarporid(?)";
+          String sql= "select * from public.clientes_buscarporid(?)";
           //creo mi preparedstatement
           preStm=con.creaPreparedSmt(sql);
           //ejecuto el prepardestatement y le asigno a mi resulset
-          preStm.setInt(1,piclienteid);
+          preStm.setInt(1, piclienteid);
           rs= con.ejecutaPrepared(preStm);
-          obj1=null;
+          obj=null;
           while (rs.next()) {
-              obj1= new Cliente();
-              obj1.setClienteid(rs.getInt("pclienteid"));
-              obj1.setNombres(rs.getString("pnombres"));
-              obj1.setApellidos(rs.getString("papellidos"));
-              obj1.setTelefono(rs.getString("ptelefono"));
-              obj1.setEmail(rs.getString("pemail"));
+              obj= new Cliente();
+              obj.setClienteid(rs.getInt("pclienteid"));
+              obj.setNombres(rs.getString("pnombres"));
+              obj.setApellidos(rs.getString("papellidos"));
+              obj.setTelefono(rs.getString("ptelefono"));
+              obj.setEmail(rs.getString("pemail"));
               
-              lista.add(obj1);
           }
       } catch (SQLException e) {
           System.out.println(e.getMessage());
@@ -150,7 +185,7 @@ public class Cliente {
           preStm.close();
           con.desconectar();
       }
-            return lista;
+            return obj;
 
     }
     
@@ -201,16 +236,18 @@ public class Cliente {
           //CREAMOS EL PRIMER COMANDO QUE SERA AÃ‘ADIDO AL ARRAYLIST D COMANDOS
           Comando cmd= new Comando();
           //SETEAMOS LA FUNCION AL COMAND0
-          cmd.setSetenciaSql("select * from public.cliente_editar(?,?)");
+          cmd.setSetenciaSql("select * from public.cliente_editar(?,?,?,?,?)");
           //CREAMOS EL ARRALIST DE PARAMETROS PARA ASIGANR A MI PRIMER COMANDO
           ArrayList<Parametro> parametros = new ArrayList<Parametro>();
           //llenamos el arraylist con todos los parametros
 
-          parametros.add(new Parametro(1, cliente.getNombres()));
-          parametros.add(new Parametro(2, cliente.getApellidos()));
-          parametros.add(new Parametro(3, cliente.getTelefono()));
-          parametros.add(new Parametro(4, cliente.getEmail()));
+          parametros.add(new Parametro(1, cliente.getClienteid()));
+          parametros.add(new Parametro(2, cliente.getNombres()));
+          parametros.add(new Parametro(3, cliente.getApellidos()));
+          parametros.add(new Parametro(4, cliente.getTelefono()));
+          parametros.add(new Parametro(5, cliente.getEmail()));
         
+          
           //llenar el comando con los parametros
           cmd.setLstParametros(parametros);
           comandos.add(cmd);
@@ -259,6 +296,4 @@ public class Cliente {
       return respuesta;
 
   }
-    
-    
 }

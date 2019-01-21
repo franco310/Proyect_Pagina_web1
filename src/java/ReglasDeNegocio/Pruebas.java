@@ -1,26 +1,16 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package ReglasDeNegocio;
+
 import java.util.ArrayList;
 import AccesoADatos.*;
 import java.sql.*;
 import java.util.*;
 
-
-/**
- *
- * @author Franco-Pc
- */
 public class Pruebas {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) throws Exception {
-           //BUSCAR TODOS
+        
+//        BUSCAR TODOS
 //        ArrayList<Producto> lista= new ArrayList<Producto>();
 //         lista=Producto.producto_buscartodos();
 //         if (lista.size()!=0)
@@ -52,58 +42,35 @@ public class Pruebas {
 //                }
 
 
-//  INSERTAR
+//  INSERTAR Producto
 //Producto obj=new Producto();
 //obj.setNombreproducto("Cable USB");
-//
-//    Producto.producto_insertar(obj);
+// Producto.producto_insertar(obj);
+
+// Insertar venta
+//Venta obj=new Venta();
+//obj.setClienteid(1);
+//obj.setProductoid(4);
+//obj.setCantidad(5);
+//obj.setPreciounitarioventa(15);
+//obj.setNumerofactura("3");
+// Venta.venta_insertar(obj);
     
 
 //    EDITAR
-//Producto obj=new Producto();
-//obj.setNombreproducto("Cable UTP");
-//obj.setProductoid(6);
-//    Producto.producto_editar(obj);
+Venta obj=new Venta();
+obj.setClienteid(1);
+obj.setProductoid(1);
+obj.setCantidad(1);
+obj.setPreciounitarioventa(1);
+obj.setNumerofactura("1");
+
+obj.setVentaid(4);
+Venta.venta_editar(obj);
     
 //  ELIMINAR
-  //  Producto.producto_eliminar(6);
-
-
-//    }
-//}
-// INSERTAR
-/*Producto obj=new Producto();
-obj.setNombreproducto("tela");
-
-  Producto.producto_insertar(obj);
-    */
-  
-  //INSERTAR
- 
-Cliente obj1=new Cliente();
-obj1.setNombres("Klever");
-obj1.setApellidos("Chaves");
-obj1.setTelefono("0984719373");
-obj1.setEmail("franco10_@outlook.com");
-Cliente.cliente_insertar(obj1);
- 
-Cliente.cliente_eliminar(2);
-
-////INSERTAR PROVEEDOR
-//Proveedor obj2=new Proveedor();
-//obj2.setNombreproveedor("Flavio Tapuy");
-//obj2.setDireccion("21 de abril");
-//obj2.setTelefono("123456765");
+//    Producto.producto_eliminar(6);
 //
-//Proveedor.proveedor_insertar(obj2);
-    
-
-
-// INSERTAR
-/*
-Categoria obj2=new Categoria();
-obj2.setNombre("hilo de seda");
-
-Categoria.categoria_insertar (obj2);
-*/
-    }}
+//
+    }
+}

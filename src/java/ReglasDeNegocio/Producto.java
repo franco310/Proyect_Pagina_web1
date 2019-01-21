@@ -5,18 +5,15 @@
  */
 package ReglasDeNegocio;
 import AccesoADatos.*;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.*;
-
 /**
  *
- * @author Franco-Pc
+ * @author Cristian
  */
 public class Producto {
-    private int productoid;
-    private String nombreproducto ;
+  private int productoid;
+  private String nombreproducto;
 
     public Producto() {
     }
@@ -26,18 +23,30 @@ public class Producto {
         this.nombreproducto = nombreproducto;
     }
 
+    /**
+     * @return the productoid
+     */
     public int getProductoid() {
         return productoid;
     }
 
+    /**
+     * @param productoid the productoid to set
+     */
     public void setProductoid(int productoid) {
         this.productoid = productoid;
     }
 
+    /**
+     * @return the nombreproducto
+     */
     public String getNombreproducto() {
         return nombreproducto;
     }
 
+    /**
+     * @param nombreproducto the nombreproducto to set
+     */
     public void setNombreproducto(String nombreproducto) {
         this.nombreproducto = nombreproducto;
     }
@@ -55,7 +64,7 @@ public class Producto {
 
       try {
           //declaro mi sql
-          String sql= "select * from public.producto_buscartodos()";
+          String sql= "select * from public.productos_buscartodos()";
           //creo mi preparedstatement
           preStm=con.creaPreparedSmt(sql);
           //ejecuto el prepardestatement y le asigno a mi resulset
@@ -82,10 +91,9 @@ public class Producto {
 
     }
     
-    public static ArrayList<Producto> producto_buscarporid(int piproductoid) throws Exception
+    public static Producto producto_buscarporid(int piproductoid) throws Exception
     {
          //CREO LISTA QUE RECIBIRA LOS DATOS DEL RESULSET
-        ArrayList<Producto> lista= new ArrayList<Producto>();
           Producto obj= new Producto();
        ResultSet rs= null;
       //LLAMO LA CONEXION
@@ -95,7 +103,7 @@ public class Producto {
        
       try {
           //declaro mi sql
-          String sql= "select * from public.producto_buscarporid(?)";
+          String sql= "select * from public.productos_buscarporid(?)";
           //creo mi preparedstatement
           preStm=con.creaPreparedSmt(sql);
           //ejecuto el prepardestatement y le asigno a mi resulset
@@ -107,7 +115,6 @@ public class Producto {
               obj.setProductoid(rs.getInt("pproductoid"));
               obj.setNombreproducto(rs.getString("pnombreproducto"));
               
-              lista.add(obj);
           }
       } catch (SQLException e) {
           System.out.println(e.getMessage());
@@ -118,7 +125,7 @@ public class Producto {
           preStm.close();
           con.desconectar();
       }
-            return lista;
+            return obj;
 
     }
     
@@ -226,6 +233,4 @@ public class Producto {
   }
     
 }
-
-    
 
