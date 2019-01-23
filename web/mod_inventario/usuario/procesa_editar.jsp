@@ -10,7 +10,7 @@
     try {
             Usuario usuario=new Usuario();
             usuario.setNombre_usuario(request.getParameter("nombre_usuario"));
-             usuario.setContraseña(request.getParameter("contraseña"));
+             usuario.setContrasenia(request.getParameter("contrasenia"));
               usuario.setCedula(request.getParameter("cedula"));
             usuario.setUsuarioid(Integer.valueOf(request.getParameter("codigo")));
            boolean result= Usuario.usuario_editar(usuario);

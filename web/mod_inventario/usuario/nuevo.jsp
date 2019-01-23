@@ -17,7 +17,7 @@
         
           <form method="POST"  action="procesa_nuevo.jsp">
             <input type="text" class="form-control" placeholder="Nombre Usuario" required id="nombre_usuario" name="nombre_usuario"/>
-          <input type="text" class="form-control" placeholder="Contraseña" required id="contraseña" name="contraseña"/>
+          <input type="text" class="form-control" placeholder="Contrasenia" required id="contrasenia" name="contrasenia"/>
           <input type="text" class="form-control" placeholder="Cedula" required id="cedula" name="cedula"/>
           
             <div class="modal-footer">

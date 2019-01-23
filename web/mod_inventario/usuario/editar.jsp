@@ -39,7 +39,7 @@
           <form method="POST" action="procesa_editar.jsp">
               <input type="hidden" id="codigo" name="codigo" value="<%=usuario.getUsuarioid()%>">
               <input type="text" required class="form-control" placeholder="Nombre Usuario" id="nombre_usuario" value="<%=usuario.getNombre_usuario()%>" name="nombre_usuario"/>
-          <input type="text" required class="form-control" placeholder="Contraseña" id="contraseña" value="<%=usuario.getContraseña()%>" name="contraseña"/>
+          <input type="text" required class="form-control" placeholder="Contrasenia" id="contrasenia" value="<%=usuario.getContrasenia()%>" name="contrasenia"/>
           <input type="text" required class="form-control" placeholder="Cedula" id="cedula" value="<%=usuario.getCedula()%>" name="cedula"/>
           
          

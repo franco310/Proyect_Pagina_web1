@@ -64,7 +64,7 @@
                 <tr>
                    <td><%= usuario.getUsuarioid()%></td>
                     <td><%= usuario.getNombre_usuario()%></td>
-                   <td><%= usuario.getContraseña()%></td>
+                   <td><%= usuario.getContrasenia()%></td>
                    <td><%= usuario.getCedula()%></td>
                    <td>
                          <a class="btn btn-danger" href='procesa_eliminar.jsp?codigo=<%= usuario.getUsuarioid()%>' onclick="return confirm('¿Está seguro que desea eliminar este registro?');">Eliminar</a>

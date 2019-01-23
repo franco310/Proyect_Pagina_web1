@@ -47,30 +47,32 @@ public class Pruebas {
 //obj.setNombreproducto("Cable USB");
 // Producto.producto_insertar(obj);
 
-// Insertar venta
-//Venta obj=new Venta();
-//obj.setClienteid(1);
-//obj.setProductoid(4);
-//obj.setCantidad(5);
-//obj.setPreciounitarioventa(15);
-//obj.setNumerofactura("3");
-// Venta.venta_insertar(obj);
-    
+ //Insertar venta
+//Usuario obj=new Usuario();
+////obj.setUsuarioid(1);
+//obj.setContraseña("gdgdgd");
+//obj.setCedula("ggdsgdg");
+// Usuario.usuario_insertar(obj);
+//    
 
 //    EDITAR
-Venta obj=new Venta();
-obj.setClienteid(1);
-obj.setProductoid(1);
-obj.setCantidad(1);
-obj.setPreciounitarioventa(1);
-obj.setNumerofactura("1");
-
-obj.setVentaid(4);
-Venta.venta_editar(obj);
+//Venta obj=new Venta();
+//obj.setClienteid(1);
+//obj.setProductoid(1);
+//obj.setCantidad(1);
+//obj.setPreciounitarioventa(1);
+//obj.setNumerofactura("1");
+//
+//obj.setVentaid(4);
+//Venta.venta_editar(obj);
     
 //  ELIMINAR
 //    Producto.producto_eliminar(6);
 //
 //
+
+
+
+
     }
 }

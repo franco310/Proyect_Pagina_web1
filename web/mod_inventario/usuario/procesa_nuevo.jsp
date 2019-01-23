@@ -12,7 +12,7 @@
     try {
             Usuario usuario=new Usuario();
             usuario.setNombre_usuario(request.getParameter("nombre_usuario"));
-            usuario.setContraseña(request.getParameter("contraseña"));
+            usuario.setContrasenia(request.getParameter("contrasenia"));
             usuario.setCedula(request.getParameter("cedula"));
            
            boolean result= Usuario.usuario_insertar(usuario);

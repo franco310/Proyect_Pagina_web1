@@ -23,16 +23,16 @@ public class Usuario {
     
   private int usuarioid;
   private String nombre_usuario;
-  private String contraseña;
+  private String contrasenia;
   private String cedula;
 
     public Usuario() {
     }
 
-    public Usuario(int usuarioid, String nombre_usuario, String contraseña, String cedula) {
+    public Usuario(int usuarioid, String nombre_usuario, String contrasenia, String cedula) {
         this.usuarioid = usuarioid;
         this.nombre_usuario = nombre_usuario;
-        this.contraseña = contraseña;
+        this.contrasenia = contrasenia;
         this.cedula = cedula;
     }
 
@@ -52,12 +52,12 @@ public class Usuario {
         this.nombre_usuario = nombre_usuario;
     }
 
-    public String getContraseña() {
-        return contraseña;
+    public String getContrasenia() {
+        return contrasenia;
     }
 
-    public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
+    public void setContrasenia(String contrasenia) {
+        this.contrasenia = contrasenia;
     }
 
     public String getCedula() {
@@ -91,7 +91,7 @@ public class Usuario {
               obj= new Usuario();
               obj.setUsuarioid(rs.getInt("pusuarioid"));
               obj.setNombre_usuario(rs.getString("pnombre_usuario"));
-              obj.setContraseña(rs.getString("pcontraseña"));
+              obj.setContrasenia(rs.getString("pcontrasenia"));
               obj.setCedula(rs.getString("pcedula"));
               lista.add(obj);
           }
@@ -131,7 +131,7 @@ public class Usuario {
               obj= new Usuario();
               obj.setUsuarioid(rs.getInt("pusuarioid"));
               obj.setNombre_usuario(rs.getString("pnombre_usuario"));
-              obj.setContraseña(rs.getString("pcontraseña"));
+              obj.setContrasenia(rs.getString("pcontrasenia"));
               obj.setCedula(rs.getString("pcedula"));
           }
       } catch (SQLException e) {
@@ -158,12 +158,12 @@ public class Usuario {
           //CREAMOS EL PRIMER COMANDO QUE SERA AÃ‘ADIDO AL ARRAYLIST D COMANDOS
           Comando cmd= new Comando();
           //SETEAMOS LA FUNCION AL COMAND0
-          cmd.setSetenciaSql("select * from public.usuario_insertar(?)");
+          cmd.setSetenciaSql("select * from public.usuario_insertar(?,?,?)");
           //CREAMOS EL ARRALIST DE PARAMETROS PARA ASIGANR A MI PRIMER COMANDO
           ArrayList<Parametro> parametros = new ArrayList<Parametro>();
           //llenamos el arraylist con todos los parametros
           parametros.add(new Parametro(1, usuario.getNombre_usuario()));
-          parametros.add(new Parametro(2, usuario.getContraseña()));
+          parametros.add(new Parametro(2, usuario.getContrasenia()));
           parametros.add(new Parametro(3, usuario.getCedula()));
           
 
@@ -194,14 +194,14 @@ public class Usuario {
           //CREAMOS EL PRIMER COMANDO QUE SERA AÃ‘ADIDO AL ARRAYLIST D COMANDOS
           Comando cmd= new Comando();
           //SETEAMOS LA FUNCION AL COMAND0
-          cmd.setSetenciaSql("select * from public.usuario_editar(?,?)");
+          cmd.setSetenciaSql("select * from public.usuario_editar(?,?,?,?)");
           //CREAMOS EL ARRALIST DE PARAMETROS PARA ASIGANR A MI PRIMER COMANDO
           ArrayList<Parametro> parametros = new ArrayList<Parametro>();
           //llenamos el arraylist con todos los parametros
 
           parametros.add(new Parametro(1, usuario.getUsuarioid()));
           parametros.add(new Parametro(2, usuario.getNombre_usuario()));
-          parametros.add(new Parametro(3, usuario.getContraseña()));
+          parametros.add(new Parametro(3, usuario.getContrasenia()));
           parametros.add(new Parametro(4, usuario.getCedula()));
         
           
