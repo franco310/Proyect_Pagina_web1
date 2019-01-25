@@ -4,10 +4,10 @@
     Author     : Franco-Pc
 --%>
 
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="ReglasDeNegocio.Usuario"%>
 <%@page import="java.util.Iterator"%>
 <%@page import="java.util.List"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
  List<Usuario> lista=Usuario.usuario_buscartodos();
  Iterator<Usuario> itUsuario=lista.iterator();
@@ -55,7 +55,12 @@
          
 <table id="example" class="table table-striped table-bordered dt-responsive nowrap" style="width:100%">                <thead>
                 <th>Id</th>
-                <th>Nombre Usuario</th>
+                <th>Nombres Usuario</th>
+                <th>Apellidos Usuario</th>
+                <th>Telefono Usuario</th>
+                <th>Email Usuario</th>
+                
+                
                 <th></th>
                 </thead>
                 <tbody>
@@ -64,8 +69,9 @@
                 <tr>
                    <td><%= usuario.getUsuarioid()%></td>
                     <td><%= usuario.getNombre_usuario()%></td>
-                   <td><%= usuario.getContrasenia()%></td>
-                   <td><%= usuario.getCedula()%></td>
+                    <td><%= usuario.getContrasenia()%></td>
+                    <td><%= usuario.getCedula()%></td>
+                   
                    <td>
                          <a class="btn btn-danger" href='procesa_eliminar.jsp?codigo=<%= usuario.getUsuarioid()%>' onclick="return confirm('¿Está seguro que desea eliminar este registro?');">Eliminar</a>
                       <button type="button"  onclick="return modaleditar(<%= usuario.getUsuarioid()%>)" class="btn btn-primary" data-toggle="modal" data-target="#ModalEditar">Editar</button>  
