@@ -1,13 +1,13 @@
 <%-- 
     Document   : listar
-    Created on : 14/01/2019, 17:28:09
-    Author     : Flavio
+    Created on : 22/01/2019, 12:45:52
+    Author     : Franco-Pc
 --%>
 
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="ReglasDeNegocio.Proveedor"%>
 <%@page import="java.util.Iterator"%>
 <%@page import="java.util.List"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
  List<Proveedor> lista=Proveedor.proveedores_buscartodos();
  Iterator<Proveedor> itProveedor=lista.iterator();
@@ -55,10 +55,9 @@
          
 <table id="example" class="table table-striped table-bordered dt-responsive nowrap" style="width:100%">                <thead>
                 <th>Id</th>
-                <th>Nombres Proveedor</th>
+                <th>Nombre Proveedor</th>
                 <th>Direccion Proveedor</th>
                 <th>Telefono Proveedor</th>
-                
                 
                 
                 <th></th>
@@ -71,7 +70,6 @@
                     <td><%= proveedor.getNombreproveedor()%></td>
                     <td><%= proveedor.getDireccion()%></td>
                     <td><%= proveedor.getTelefono()%></td>
-                    
                    
                    <td>
                          <a class="btn btn-danger" href='procesa_eliminar.jsp?codigo=<%= proveedor.getProveedorid()%>' onclick="return confirm('¿Está seguro que desea eliminar este registro?');">Eliminar</a>
