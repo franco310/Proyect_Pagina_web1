@@ -90,7 +90,7 @@ public class Proveedor {
               obj= new Proveedor();
               obj.setProveedorid(rs.getInt("pproveedorid"));
               obj.setNombreproveedor(rs.getString("pnombreproveedor"));
-              obj.setDireccion(rs.getString("padireccion"));
+              obj.setDireccion(rs.getString("pdireccion"));
               obj.setTelefono(rs.getString("ptelefono"));
              
               
@@ -131,7 +131,7 @@ public class Proveedor {
               obj= new Proveedor();
               obj.setProveedorid(rs.getInt("pproveedorid"));
               obj.setNombreproveedor(rs.getString("pnombreproveedor"));
-              obj.setDireccion(rs.getString("padireccion"));
+              obj.setDireccion(rs.getString("pdireccion"));
               obj.setTelefono(rs.getString("ptelefono"));
               
           }
