@@ -59,7 +59,7 @@ public class Pagina {
 
       try {
           //declaro mi sql
-          String sql= "select * from public.pragina_buscartodos()";
+          String sql= "select * from public.pagina_buscartodos()";
           //creo mi preparedstatement
           preStm=con.creaPreparedSmt(sql);
           //ejecuto el prepardestatement y le asigno a mi resulset
