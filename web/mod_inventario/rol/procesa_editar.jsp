@@ -11,7 +11,7 @@
     try {
             Rol rol=new Rol();
             rol.setNombre_rol(request.getParameter("nombre_rol"));
-             rol.setDescripcion(request.getParameter("descripcion"));
+            rol.setDescripcion(request.getParameter("descripcion"));
             rol.setRolid(Integer.valueOf(request.getParameter("codigo")));
            boolean result= Rol.rol_editar(rol);
              if (result)
