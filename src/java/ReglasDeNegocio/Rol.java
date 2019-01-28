@@ -110,7 +110,7 @@ public class Rol {
        
       try {
           //declaro mi sql
-          String sql= "select * from public.rols_buscarporid(?)";
+          String sql= "select * from public.rol_buscarporid(?)";
           //creo mi preparedstatement
           preStm=con.creaPreparedSmt(sql);
           //ejecuto el prepardestatement y le asigno a mi resulset
