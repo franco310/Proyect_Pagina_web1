@@ -217,14 +217,18 @@ public class Orden {
           //CREAMOS EL PRIMER COMANDO QUE SERA AÃ‘ADIDO AL ARRAYLIST D COMANDOS
           Comando cmd= new Comando();
           //SETEAMOS LA FUNCION AL COMAND0
-          cmd.setSetenciaSql("select * from public.orden_insertar(?,?,?,?)");
+          cmd.setSetenciaSql("select * from public.orden_insertar(?,?,?,?,?,?,?)");
           //CREAMOS EL ARRALIST DE PARAMETROS PARA ASIGANR A MI PRIMER COMANDO
           ArrayList<Parametro> parametros = new ArrayList<Parametro>();
           //llenamos el arraylist con todos los parametros
-//          parametros.add(new Parametro(1, orden.getNombres()));
-//          parametros.add(new Parametro(2, orden.getApellidos()));
-//          parametros.add(new Parametro(3, orden.getTelefono()));
-//          parametros.add(new Parametro(4, orden.getEmail()));
+          parametros.add(new Parametro(1, orden.getProveedor().getProveedorid()));
+          parametros.add(new Parametro(2, orden.getProducto().getProductoid()));
+          parametros.add(new Parametro(3, orden.getCantidad()));
+          parametros.add(new Parametro(4, orden.getPreciounitario()));
+          parametros.add(new Parametro(5, orden.getNumeroorden()));
+          parametros.add(new Parametro(6, orden.isEntregada()));
+          parametros.add(new Parametro(7, orden.getFechaentrega()));
+
 
           //llenar el comando con los parametros
           cmd.setLstParametros(parametros);
@@ -253,17 +257,19 @@ public class Orden {
           //CREAMOS EL PRIMER COMANDO QUE SERA AÃ‘ADIDO AL ARRAYLIST D COMANDOS
           Comando cmd= new Comando();
           //SETEAMOS LA FUNCION AL COMAND0
-          cmd.setSetenciaSql("select * from public.orden_editar(?,?,?,?,?)");
+          cmd.setSetenciaSql("select * from public.orden_editar(?,?,?,?,?,?,?,?)");
           //CREAMOS EL ARRALIST DE PARAMETROS PARA ASIGANR A MI PRIMER COMANDO
           ArrayList<Parametro> parametros = new ArrayList<Parametro>();
           //llenamos el arraylist con todos los parametros
 
           parametros.add(new Parametro(1, orden.getOrdenid()));
-//          parametros.add(new Parametro(2, orden.getNombres()));
-//          parametros.add(new Parametro(3, orden.getApellidos()));
-//          parametros.add(new Parametro(4, orden.getTelefono()));
-//          parametros.add(new Parametro(5, orden.getEmail()));
-        
+          parametros.add(new Parametro(2, orden.getProveedor().getProveedorid()));
+          parametros.add(new Parametro(3, orden.getProducto().getProductoid()));
+          parametros.add(new Parametro(4, orden.getCantidad()));
+          parametros.add(new Parametro(5, orden.getPreciounitario()));
+          parametros.add(new Parametro(6, orden.getNumeroorden()));
+          parametros.add(new Parametro(7, orden.isEntregada()));
+          parametros.add(new Parametro(8, orden.getFechaentrega()));
           
           //llenar el comando con los parametros
           cmd.setLstParametros(parametros);
