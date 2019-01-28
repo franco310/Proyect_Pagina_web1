@@ -27,20 +27,22 @@ public class Pruebas {
 //             
     
 //BUSCAR POR ID
-//  ArrayList<Producto> lista= new ArrayList<Producto>();
-//         lista=Producto.producto_buscarporid(2);
+// ArrayList<Usuario> lista= new ArrayList<Usuario>();
+//         lista=Usuario.usuario_buscarporid(5);
 //         if (lista.size()!=0)
 //          {
-//               for(Producto rec: lista)
+//               for(Usuario rec: lista)
 //                {
-//                         System.out.println(rec.getNombreproducto());
+//                         System.out.println(rec.getNombre_usuario());
 //                }
 //             }
 //            else
 //                {
 //                System.out.println("No hay registro");
 //                }
-
+//
+//
+//    }
 
 //  INSERTAR Producto
 //Producto obj=new Producto();
@@ -71,8 +73,8 @@ public class Pruebas {
 //
 //
 
+    }}
 
 
+    
 
-    }
-}

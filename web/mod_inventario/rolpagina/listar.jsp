@@ -1,16 +1,16 @@
 <%-- 
     Document   : listar
-    Created on : 22/01/2019, 12:45:52
+    Created on : 28/01/2019, 13:15:35
     Author     : Franco-Pc
 --%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@page import="ReglasDeNegocio.Usuario"%>
+<%@page import="ReglasDeNegocio.Rolpagina"%>
 <%@page import="java.util.Iterator"%>
 <%@page import="java.util.List"%>
+
 <%
- List<Usuario> lista=Usuario.usuario_buscartodos();
- Iterator<Usuario> itUsuario=lista.iterator();
+ List<Rolpagina> lista=Rolpagina.rolpagina_buscartodos();
+ Iterator<Rolpagina> itRolpagina=lista.iterator();
 %>
 <!DOCTYPE html>
 <html>
@@ -48,32 +48,26 @@
         </div>
        <% }%>
         <!--Fin Sección alerta-->
-         <h1>Usuarios</h1> 
+         <h1>Rolpaginas</h1> 
            <button type="button" onclick="return modalnuevo();" class="btn btn-primary" data-toggle="modal" data-target="#ModalNuevo"> Nuevo</button>  
           
          
          
 <table id="example" class="table table-striped table-bordered dt-responsive nowrap" style="width:100%">                <thead>
                 <th>Id</th>
-                <th>Nombres Usuario</th>
-                <th>Apellidos Usuario</th>
-                <th>Telefono Usuario</th>
-                
-                
-                <th></th>
+                <th>Rol</th>
+                <th>Pagina</th>
                 </thead>
                 <tbody>
-               <%while(itUsuario.hasNext()){
-                  Usuario usuario=itUsuario.next();%>
+               <%while(itRolpagina.hasNext()){
+                  Rolpagina rolpagina=itRolpagina.next();%>
                 <tr>
-                   <td><%= usuario.getUsuarioid()%></td>
-                    <td><%= usuario.getNombre_usuario()%></td>
-                    <td><%= usuario.getContrasenia()%></td>
-                    <td><%= usuario.getCedula()%></td>
-                   
+                   <td><%= rolpagina.getRolpaginaid()%></td>
+                   <td><%= rolpagina.getRol()%></td>
+                   <td><%= rolpagina.getPagina()%></td>
                    <td>
-                         <a class="btn btn-danger" href='procesa_eliminar.jsp?codigo=<%= usuario.getUsuarioid()%>' onclick="return confirm('¿Está seguro que desea eliminar este registro?');">Eliminar</a>
-                      <button type="button"  onclick="return modaleditar(<%= usuario.getUsuarioid()%>)" class="btn btn-primary" data-toggle="modal" data-target="#ModalEditar">Editar</button>  
+                         <a class="btn btn-danger" href='procesa_eliminar.jsp?codigo=<%= rolpagina.getRolpaginaid()%>' onclick="return confirm('¿Está seguro que desea eliminar este registro?');">Eliminar</a>
+                      <button type="button"  onclick="return modaleditar(<%= rolpagina.getRolpaginaid()%>)" class="btn btn-primary" data-toggle="modal" data-target="#ModalEditar">Editar</button>  
 
                    </td>
                 </tr>
@@ -86,7 +80,7 @@
                 <div class="modal-dialog" role="document">
                 <div class="modal-content">
                       <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Editar Usuario</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Editar Rolpagina</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                           <span aria-hidden="true">&times;</span>
                         </button>
@@ -105,7 +99,7 @@
                 <div class="modal-dialog" role="document">
                 <div class="modal-content">
                       <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Nuevo Usuario</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Nuevo Rolpagina</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                           <span aria-hidden="true">&times;</span>
                         </button>

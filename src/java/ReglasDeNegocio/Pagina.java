@@ -230,6 +230,10 @@ public class Pagina {
       return respuesta;
 
   }
-  
+   @Override 
+    public String toString(){
+        return url;
+    }
+    
     
 }
