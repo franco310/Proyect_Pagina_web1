@@ -56,8 +56,8 @@
 <table id="example" class="table table-striped table-bordered dt-responsive nowrap" style="width:100%">                <thead>
                 <th>Id</th>
                 <th>Nombres Usuario</th>
-                <th>Apellidos Usuario</th>
-                <th>Telefono Usuario</th>
+                <th>Contraseña</th>
+                <th>Cedula</th>
                 
                 
                 <th></th>
