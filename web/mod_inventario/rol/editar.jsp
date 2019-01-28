@@ -38,7 +38,7 @@
         
           <form method="POST" action="procesa_editar.jsp">
               <input type="hidden" id="codigo" name="codigo" value="<%=rol.getRolid()%>">
-              <input type="text" required class="form-control" placeholder="Rol" id="nombre_rol" value="<%=rol.getNombre_rol()%>" name="rol"/>
+              <input type="text" required class="form-control" placeholder="Rol" id="nombre_rol" value="<%=rol.getNombre_rol()%>" name="nombre_rol"/>
               <input type="text" required class="form-control" placeholder="Descripcion" id="descripcion" value="<%=rol.getDescripcion()%>" name="descripcion"/>
           
           
