@@ -8,6 +8,7 @@
 <%@page import="ReglasDeNegocio.Rol"%>
 <%@page import="java.util.Iterator"%>
 <%@page import="java.util.List"%>
+
 <%
  List<Rol> lista=Rol.rol_buscartodos();
  Iterator<Rol> itRol=lista.iterator();
