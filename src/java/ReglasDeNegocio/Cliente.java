@@ -296,4 +296,8 @@ public class Cliente {
       return respuesta;
 
   }
+       @Override 
+    public String toString(){
+        return nombres;
+    }
 }

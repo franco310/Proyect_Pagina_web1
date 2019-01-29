@@ -5,7 +5,6 @@
  */
 package ReglasDeNegocio;
 
-
 import AccesoADatos.Comando;
 import AccesoADatos.Conexion;
 import AccesoADatos.Global;
@@ -16,21 +15,20 @@ import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 
-
-
 /**
  *
- * @author Flavio
+ * @author USER
  */
 public class Orden {
-  private int ordenid;
-  private Proveedor proveedor;
-  private Producto producto;
-  private int cantidad; 
-  private double preciounitario; 
-  private String numeroorden; 
-  private boolean entregada; 
-  private Timestamp  fechaentrega;
+    private int ordenid;
+    private Proveedor proveedor;
+    private Producto producto;
+    private int cantidad;
+    private double preciounitario;
+    private String numeroorden;   
+    private boolean entregada;
+    private Timestamp fechaentrega;
+
 
     public Orden() {
     }
@@ -44,72 +42,120 @@ public class Orden {
         this.numeroorden = numeroorden;
         this.entregada = entregada;
         this.fechaentrega = fechaentrega;
-    }
-
+    }   
+           
+    /**
+     * @return the ordenid
+     */
     public int getOrdenid() {
         return ordenid;
     }
 
+    /**
+     * @param ordenid the ordenid to set
+     */
     public void setOrdenid(int ordenid) {
         this.ordenid = ordenid;
     }
 
+    /**
+     * @return the proveedor
+     */
     public Proveedor getProveedor() {
         return proveedor;
     }
 
+    /**
+     * @param proveedor the proveedor to set
+     */
     public void setProveedor(Proveedor proveedor) {
         this.proveedor = proveedor;
     }
 
+    /**
+     * @return the producto
+     */
     public Producto getProducto() {
         return producto;
     }
 
+    /**
+     * @param producto the producto to set
+     */
     public void setProducto(Producto producto) {
         this.producto = producto;
     }
 
+    /**
+     * @return the cantidad
+     */
     public int getCantidad() {
         return cantidad;
     }
 
+    /**
+     * @param cantidad the cantidad to set
+     */
     public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
     }
 
+    /**
+     * @return the preciounitario
+     */
     public double getPreciounitario() {
         return preciounitario;
     }
 
+    /**
+     * @param preciounitario the preciounitario to set
+     */
     public void setPreciounitario(double preciounitario) {
         this.preciounitario = preciounitario;
     }
 
+    /**
+     * @return the numeroorden
+     */
     public String getNumeroorden() {
         return numeroorden;
     }
 
+    /**
+     * @param numeroorden the numeroorden to set
+     */
     public void setNumeroorden(String numeroorden) {
         this.numeroorden = numeroorden;
     }
 
+    /**
+     * @return the entregada
+     */
     public boolean isEntregada() {
         return entregada;
     }
 
+    /**
+     * @param entregada the entregada to set
+     */
     public void setEntregada(boolean entregada) {
         this.entregada = entregada;
     }
 
+    /**
+     * @return the fechaentrega
+     */
     public Timestamp getFechaentrega() {
         return fechaentrega;
     }
 
+    /**
+     * @param fechaentrega the fechaentrega to set
+     */
     public void setFechaentrega(Timestamp fechaentrega) {
         this.fechaentrega = fechaentrega;
-    }
-    
+    }  
+        
     public static ArrayList<Orden> orden_buscartodos() throws Exception
     {
          //CREO LISTA QUE RECIBIRA LOS DATOS DEL RESULSET
@@ -123,7 +169,7 @@ public class Orden {
 
       try {
           //declaro mi sql
-          String sql= "select * from ordenes_buscartodos()";
+          String sql= "select * from public.ordenes_buscartodos()";
           //creo mi preparedstatement
           preStm=con.creaPreparedSmt(sql);
           //ejecuto el prepardestatement y le asigno a mi resulset
@@ -131,20 +177,19 @@ public class Orden {
           rs= con.ejecutaPrepared(preStm);
           obj=null;
           while (rs.next()) {
-              obj= new Orden();
+              obj = new Orden();
               obj.setOrdenid(rs.getInt("pordenid"));
-              Proveedor proveedor = new Proveedor();
+              Proveedor proveedor= new Proveedor();
               Proveedor proveedores = proveedor.proveedores_buscarporid(rs.getInt("pproveedorid"));
               obj.setProveedor(proveedores);
-              Producto producto = new Producto();
+              Producto producto= new Producto();
               Producto productos = producto.producto_buscarporid(rs.getInt("pproductoid"));
-              obj.setProducto(producto);
+              obj.setProducto(productos);
               obj.setCantidad(rs.getInt("pcantidad"));
               obj.setPreciounitario(rs.getDouble("ppreciounitario"));
               obj.setNumeroorden(rs.getString("pnumeroorden"));
               obj.setEntregada(rs.getBoolean("pentregada"));
               obj.setFechaentrega(rs.getTimestamp("pfechaentrega"));
-              
               lista.add(obj);
           }
       } catch (SQLException e) {
@@ -157,11 +202,12 @@ public class Orden {
           con.desconectar();
       }
             return lista;
-
     }
-    public static Orden orden_buscarporid(int piordenid) throws Exception
+    
+    public static Orden orden_buscarporid(int pscactbevidenid) throws Exception
     {
          //CREO LISTA QUE RECIBIRA LOS DATOS DEL RESULSET
+        ArrayList<Orden> lista= new ArrayList<Orden>();
           Orden obj= new Orden();
        ResultSet rs= null;
       //LLAMO LA CONEXION
@@ -175,23 +221,24 @@ public class Orden {
           //creo mi preparedstatement
           preStm=con.creaPreparedSmt(sql);
           //ejecuto el prepardestatement y le asigno a mi resulset
-          preStm.setInt(1, piordenid);
+          preStm.setInt(1, pscactbevidenid);
           rs= con.ejecutaPrepared(preStm);
           obj=null;
           while (rs.next()) {
-              obj= new Orden();
-              Proveedor proveedor = new Proveedor();
+              obj = new Orden();
+              obj.setOrdenid(rs.getInt("pordenid"));
+              Proveedor proveedor= new Proveedor();
               Proveedor proveedores = proveedor.proveedores_buscarporid(rs.getInt("pproveedorid"));
               obj.setProveedor(proveedores);
-              Producto producto = new Producto();
+              Producto producto= new Producto();
               Producto productos = producto.producto_buscarporid(rs.getInt("pproductoid"));
-              obj.setProducto(producto);
+              obj.setProducto(productos);
               obj.setCantidad(rs.getInt("pcantidad"));
               obj.setPreciounitario(rs.getDouble("ppreciounitario"));
               obj.setNumeroorden(rs.getString("pnumeroorden"));
               obj.setEntregada(rs.getBoolean("pentregada"));
               obj.setFechaentrega(rs.getTimestamp("pfechaentrega"));
-              
+              lista.add(obj);
           }
       } catch (SQLException e) {
           System.out.println(e.getMessage());
@@ -227,9 +274,7 @@ public class Orden {
           parametros.add(new Parametro(4, orden.getPreciounitario()));
           parametros.add(new Parametro(5, orden.getNumeroorden()));
           parametros.add(new Parametro(6, orden.isEntregada()));
-          parametros.add(new Parametro(7, orden.getFechaentrega()));
-
-
+          parametros.add(new Parametro(7, orden.getFechaentrega()));        
           //llenar el comando con los parametros
           cmd.setLstParametros(parametros);
           comandos.add(cmd);
@@ -270,6 +315,7 @@ public class Orden {
           parametros.add(new Parametro(6, orden.getNumeroorden()));
           parametros.add(new Parametro(7, orden.isEntregada()));
           parametros.add(new Parametro(8, orden.getFechaentrega()));
+        
           
           //llenar el comando con los parametros
           cmd.setLstParametros(parametros);
@@ -320,3 +366,5 @@ public class Orden {
 
   }
 }
+
+    

@@ -231,6 +231,10 @@ public class Producto {
       return respuesta;
 
   }
+      @Override 
+    public String toString(){
+        return nombreproducto;
+    }
     
 }
 

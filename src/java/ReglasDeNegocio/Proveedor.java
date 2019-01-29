@@ -254,5 +254,10 @@ public class Proveedor {
       return respuesta;
 
   }
+      @Override 
+    public String toString(){
+        return nombreproveedor;
+    }
     
+      
 }
