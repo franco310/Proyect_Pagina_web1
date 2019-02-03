@@ -28,6 +28,7 @@
         <title>JSP Page</title>
     </head>
     <body>
+        
          <!--Sección alerta-->
         <%
             String alerta="";
