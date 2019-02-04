@@ -11,20 +11,21 @@ public class Pruebas {
     public static void main(String[] args) throws Exception {
         
 //        BUSCAR TODOS
-//        ArrayList<Producto> lista= new ArrayList<Producto>();
-//         lista=Producto.producto_buscartodos();
-//         if (lista.size()!=0)
-//          {
-//               for(Producto rec: lista)
-//                {
-//                         System.out.println(rec.getNombreproducto());
-//                }
-//             }
-//            else
-//                {
-//                System.out.println("No hay registro");
-//                }
-//             
+//            ArrayList<Categoria> lista= new ArrayList<Categoria>();
+//             lista=Categoria.categoria_buscartodos();
+//             if (lista.size()!=0)
+//              {
+//                   for(Categoria rec: lista)
+//                    {
+//                             System.out.println(rec.getNombre());
+//                             System.out.println(rec.getDescripcion());
+//                    }
+//                 }
+//                else
+//                    {
+//                    System.out.println("No hay registro");
+//                    }
+                 
     
 //BUSCAR POR ID
 // ArrayList<Usuario> lista= new ArrayList<Usuario>();
@@ -45,9 +46,11 @@ public class Pruebas {
 //    }
 
 //  INSERTAR Producto
-//Producto obj=new Producto();
-//obj.setNombreproducto("Cable USB");
-// Producto.producto_insertar(obj);
+Categoria obj=new Categoria();
+obj.setNombre("Cable USB");
+obj.setNombre("Cable");
+
+ Categoria.categoria_insertar(obj);
 
  //Insertar venta
 //Usuario obj=new Usuario();

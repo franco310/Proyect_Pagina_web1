@@ -232,7 +232,7 @@ public class Pagina {
   }
    @Override 
     public String toString(){
-        return url;
+        return descripcion;
     }
     
     

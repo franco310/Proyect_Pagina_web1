@@ -91,7 +91,6 @@ public class StringEncrypter {
         }
         return null;
     }
-
     public String decrypt(String str) {
         
         try {

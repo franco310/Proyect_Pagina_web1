@@ -4,6 +4,9 @@
     Author     : Flavio
 --%>
 
+<%@page import="java.util.Iterator"%>
+<%@page import="java.util.List"%>
+<%@page import="ReglasDeNegocio.Cliente"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -20,6 +23,7 @@
             <input type="text" class="form-control" placeholder="Apellido Cliente" required id="apellidos_cliente" name="apellidos_cliente"/>
             <input type="text" class="form-control" placeholder="Telefono Cliente" required id="telefono_cliente" name="telefono_cliente"/>
             <input type="text" class="form-control" placeholder="Email Cliente" required id="email_cliente" name="email_cliente"/>
+            
             <div class="modal-footer">
                 <button id="btn_guardar" name="btn_guardar" type="submit" class="btn btn-primary" >Guardar</button>
                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>

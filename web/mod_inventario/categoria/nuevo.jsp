@@ -1,8 +1,6 @@
-
-
 <%-- 
-    Document   : nuevo
-    Created on : 22/01/2019, 12:51:14
+    Document   : editar
+    Created on : 14/01/2019, 17:01:22
     Author     : Flavio
 --%>
 
@@ -18,10 +16,12 @@
         
         
           <form method="POST"  action="procesa_nuevo.jsp">
-           <input type="text" class="form-control" placeholder="nombre_rol" required id="nombre_rol" name="nombre_rol"/>
-          <input type="text" class="form-control" placeholder="Descripcion" required id="descripcion" name="descripcion"/>
-          
-          
+            <input type="text" class="form-control" placeholder="Nombre Categoria" required id="nombre_categoria" name="nombre_categoria"/>
+            <input type="text" class="form-control" placeholder="Descripcion" required id="descripcion" name="descripcion"/>
+            
+             
+            
+            
             <div class="modal-footer">
                 <button id="btn_guardar" name="btn_guardar" type="submit" class="btn btn-primary" >Guardar</button>
                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
@@ -30,3 +30,4 @@
           
     </body>
 </html>
+

@@ -13,56 +13,54 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import ReglasDeNegocio.Rol;
 
 /**
  *
  * @author Franco-Pc
  */
-public class Rolpagina {
-  private int rolpaginaid;
-  private Rol rol;
-  private Pagina pagina;
+public class Categoria {
+    private int categoriaid;
+    private String nombre;
+    private String descripcion;
 
-    public Rolpagina() {
+    public Categoria() {
     }
 
-    public Rolpagina(int rolpaginaid, Rol rol, Pagina pagina) {
-        this.rolpaginaid = rolpaginaid;
-        this.rol = rol;
-        this.pagina = pagina;
+    public Categoria(int categoriaid, String nombre, String descripcion) {
+        this.categoriaid = categoriaid;
+        this.nombre = nombre;
+        this.descripcion = descripcion;
     }
 
-    public int getRolpaginaid() {
-        return rolpaginaid;
+    public int getCategoriaid() {
+        return categoriaid;
     }
 
-    public void setRolpaginaid(int rolpaginaid) {
-        this.rolpaginaid = rolpaginaid;
+    public void setCategoriaid(int categoriaid) {
+        this.categoriaid = categoriaid;
     }
 
-    public Rol getRol() {
-        return rol;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setRol(Rol rol) {
-        this.rol = rol;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public Pagina getPagina() {
-        return pagina;
+    public String getDescripcion() {
+        return descripcion;
     }
 
-    public void setPagina(Pagina pagina) {
-        this.pagina = pagina;
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 
-  
-      public static ArrayList<Rolpagina> rolpagina_buscartodos() throws Exception
+     public static ArrayList<Categoria> categoria_buscartodos() throws Exception
     {
          //CREO LISTA QUE RECIBIRA LOS DATOS DEL RESULSET
-        ArrayList<Rolpagina> lista= new ArrayList<Rolpagina>();
-          Rolpagina obj= new Rolpagina();
+        ArrayList<Categoria> lista= new ArrayList<Categoria>();
+          Categoria obj= new Categoria();
        ResultSet rs= null;
       //LLAMO LA CONEXION
       Conexion con= new Conexion(Global.driver, Global.url, Global.user, Global.pass);
@@ -71,7 +69,7 @@ public class Rolpagina {
 
       try {
           //declaro mi sql
-          String sql= "select * from public.rolpagina_buscartodos()";
+          String sql= "select * from public.categoria_buscartodos()";
           //creo mi preparedstatement
           preStm=con.creaPreparedSmt(sql);
           //ejecuto el prepardestatement y le asigno a mi resulset
@@ -79,15 +77,10 @@ public class Rolpagina {
           rs= con.ejecutaPrepared(preStm);
           obj=null;
           while (rs.next()) {
-              obj= new Rolpagina();
-              obj.setRolpaginaid(rs.getInt("prolpaginaid"));
-              Rol rol = new Rol();
-              Rol roles = rol.rol_buscarporid(rs.getInt("prolid"));
-              obj.setRol(roles);
-              Pagina pagina = new Pagina();
-              Pagina paginas = pagina.pagina_buscarporid(rs.getInt("ppaginaid"));
-              obj.setPagina(paginas);
-            
+              obj= new Categoria();
+              obj.setCategoriaid(rs.getInt("pcategoriaid"));
+              obj.setNombre(rs.getString("pnombre"));
+              obj.setDescripcion(rs.getString("pdescripcion"));
               
               lista.add(obj);
           }
@@ -104,12 +97,10 @@ public class Rolpagina {
 
     }
     
-      
-   
- public static Rolpagina rolpagina_buscarporid(int pirolpaginaid) throws Exception
+    public static Categoria categoria_buscarporid(int picategoria_id) throws Exception
     {
          //CREO LISTA QUE RECIBIRA LOS DATOS DEL RESULSET
-          Rolpagina obj= new Rolpagina();
+          Categoria obj= new Categoria();
        ResultSet rs= null;
       //LLAMO LA CONEXION
       Conexion con= new Conexion(Global.driver, Global.url, Global.user, Global.pass);
@@ -118,23 +109,19 @@ public class Rolpagina {
        
       try {
           //declaro mi sql
-          String sql= "select * from public.rolpagina_buscarporid(?)";
+          String sql= "select * from public.categoria_buscarporid(?)";
           //creo mi preparedstatement
           preStm=con.creaPreparedSmt(sql);
           //ejecuto el prepardestatement y le asigno a mi resulset
-          preStm.setInt(1, pirolpaginaid);
+          preStm.setInt(1, picategoria_id);
           rs= con.ejecutaPrepared(preStm);
           obj=null;
           while (rs.next()) {
-              obj= new Rolpagina();
-              obj.setRolpaginaid(rs.getInt("prolpaginaid"));
-              Rol rol = new Rol();
-              Rol roles = rol.rol_buscarporid(rs.getInt("prolid"));
-              obj.setRol(rol);
-              Pagina pagina = new Pagina();
-              Pagina paginas = pagina.pagina_buscarporid(rs.getInt("ppaginaid"));
-              obj.setPagina(paginas);
-            
+              obj= new Categoria();
+              obj.setCategoriaid(rs.getInt("pcategoriaid"));
+              obj.setNombre(rs.getString("pnombre"));
+              obj.setDescripcion(rs.getString("pdescripcion"));
+              
           }
       } catch (SQLException e) {
           System.out.println(e.getMessage());
@@ -149,8 +136,8 @@ public class Rolpagina {
 
     }
     
-   
-     public static boolean rolpagina_insertar(Rolpagina rolpagina) throws Exception
+    
+     public static boolean categoria_insertar(Categoria categoria) throws Exception
   {
       boolean respuesta=false;
       Conexion con = new Conexion(Global.driver, Global.url, Global.user, Global.pass);
@@ -160,12 +147,13 @@ public class Rolpagina {
           //CREAMOS EL PRIMER COMANDO QUE SERA AÃ‘ADIDO AL ARRAYLIST D COMANDOS
           Comando cmd= new Comando();
           //SETEAMOS LA FUNCION AL COMAND0
-          cmd.setSetenciaSql("select * from public.rolpagina_insertar(?,?)");
+          cmd.setSetenciaSql("select * from public.categoria_insertar(?,?)");
           //CREAMOS EL ARRALIST DE PARAMETROS PARA ASIGANR A MI PRIMER COMANDO
           ArrayList<Parametro> parametros = new ArrayList<Parametro>();
           //llenamos el arraylist con todos los parametros
-          parametros.add(new Parametro(1, rolpagina.getRol().getRolid()));
-          parametros.add(new Parametro(2, rolpagina.getPagina().getPaginaid()));
+          parametros.add(new Parametro(1, categoria.getNombre()));
+          parametros.add(new Parametro(2, categoria.getDescripcion()));
+          
 
           //llenar el comando con los parametros
           cmd.setLstParametros(parametros);
@@ -184,7 +172,7 @@ public class Rolpagina {
 
   }
     
-     public static boolean rolpagina_editar(Rolpagina rolpagina) throws Exception
+     public static boolean categoria_editar(Categoria categoria) throws Exception
   {
       boolean respuesta=false;
       Conexion con = new Conexion(Global.driver, Global.url, Global.user, Global.pass);
@@ -194,16 +182,14 @@ public class Rolpagina {
           //CREAMOS EL PRIMER COMANDO QUE SERA AÃ‘ADIDO AL ARRAYLIST D COMANDOS
           Comando cmd= new Comando();
           //SETEAMOS LA FUNCION AL COMAND0
-          cmd.setSetenciaSql("select * from public.rolpagina_editar(?,?,?)");
+          cmd.setSetenciaSql("select * from public.categoria_editar(?,?,?)");
           //CREAMOS EL ARRALIST DE PARAMETROS PARA ASIGANR A MI PRIMER COMANDO
           ArrayList<Parametro> parametros = new ArrayList<Parametro>();
           //llenamos el arraylist con todos los parametros
 
-          parametros.add(new Parametro(1, rolpagina.getRolpaginaid()));
-           parametros.add(new Parametro(2, rolpagina.getRol().getRolid()));
-          parametros.add(new Parametro(3, rolpagina.getPagina().getPaginaid()));
-//          parametros.add(new Parametro(4, rolpagina.getTelefono()));
-//          parametros.add(new Parametro(5, rolpagina.getEmail()));
+          parametros.add(new Parametro(1, categoria.getCategoriaid()));
+          parametros.add(new Parametro(2, categoria.getNombre()));
+          parametros.add(new Parametro(3, categoria.getDescripcion()));
         
           
           //llenar el comando con los parametros
@@ -223,7 +209,7 @@ public class Rolpagina {
 
   }
      
-      public static boolean rolpagina_eliminar(int pscactbevidenid) throws Exception
+      public static boolean categoria_eliminar(int pscactbevidenid) throws Exception
   {
       boolean respuesta=false;
       Conexion con = new Conexion(Global.driver, Global.url, Global.user, Global.pass);
@@ -233,7 +219,7 @@ public class Rolpagina {
           //CREAMOS EL PRIMER COMANDO QUE SERA AÃ‘ADIDO AL ARRAYLIST D COMANDOS
           Comando cmd= new Comando();
           //SETEAMOS LA FUNCION AL COMAND0
-          cmd.setSetenciaSql("select * from public.rolpagina_eliminar(?)");
+          cmd.setSetenciaSql("select * from public.categoria_eliminar(?)");
           //CREAMOS EL ARRALIST DE PARAMETROS PARA ASIGANR A MI PRIMER COMANDO
           ArrayList<Parametro> parametros = new ArrayList<Parametro>();
           //llenamos el arraylist con todos los parametros
@@ -252,9 +238,22 @@ public class Rolpagina {
           con.desconectar();
       }
       return respuesta;
-
   }
-    
-    
+  @Override 
+    public String toString(){
+        return nombre;
+    }
     
 }
+    
+    
+    
+    
+    
+ 
+    
+    
+    
+    
+    
+

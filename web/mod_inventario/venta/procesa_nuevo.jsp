@@ -9,10 +9,10 @@
             Venta venta=new Venta();
             Cliente cliente = new Cliente();
             Cliente clientes = cliente.cliente_buscarporid(Integer.valueOf(request.getParameter("id_cliente")));
-            Producto producto = new Producto();            
+            Producto producto = new Producto();
             Producto productos = producto.producto_buscarporid(Integer.valueOf(request.getParameter("id_producto")));
+            venta.setProducto(productos);
             venta.setCliente(clientes);            
-            venta.setProducto(productos);            
             venta.setCantidad(Integer.valueOf(request.getParameter("cantidad_venta")));
             venta.setPreciounitarioventa(Double.valueOf(request.getParameter("preciounitario_venta")));                        
             venta.setFechatransaccion(Time.valueOf(request.getParameter("fechatransaccion_venta")));
