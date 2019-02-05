@@ -16,7 +16,11 @@
         </div>
         
         <div class="formulario">
-            <h2>Iniciar Sesión</h2>
+            
+            <h1 align="center" >
+                <img src="./img/inicio.png"/>
+            </h1>
+            <h2 align="center">Iniciar Sesión</h2>
             <form action="#">
                 <input type="text" placeholder="Usuario" required>
                 <input type="password" placeholder="Contraseña" required>
@@ -33,7 +37,8 @@
               
                 <div class="modal-footer">
                 <button  id="btn_guardar" name="btn_guardar" type="submit" class="btn btn-primary" >Guardar</button>
-                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <div class="toggle2"><button  type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button></div>
+                 
                 </div>
             </form>
         </div>
