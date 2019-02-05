@@ -4,22 +4,35 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-simple-sidebar/blob/master/LICENSE)
  */
 body {
-  background: url(../img/bg2.jpg);  
+  background: url(../img/bg2.jpg);
   background-size: cover;
   background-attachment: fixed;
   font-family: Roboto;
   overflow-x: hidden;
 }
 
-#sidebar-wrapper {
-  background: rgba(0,0,0,.7);  
+
+#sidebar-wrapper {  
+  background: rgba(0,0,0,.7);
   min-height: 100vh;
   margin-left: -15rem;
   -webkit-transition: margin .25s ease-out;
   -moz-transition: margin .25s ease-out;
   -o-transition: margin .25s ease-out;
   transition: margin .25s ease-out;
+    color: rgb(225, 234, 235);
 }
+
+li a{
+  color: rgb(225, 234, 235);
+  padding: 20px;
+  display: block;
+}
+li a:hover{
+  background:rgb(228, 192, 36);
+  border-bottom: 4px solid #0075d9;
+}
+
 
 #sidebar-wrapper .sidebar-heading {
   padding: 0.875rem 1.25rem;
@@ -46,6 +59,11 @@ body {
   #page-content-wrapper {
     min-width: 0;
     width: 100%;
+  }
+  #page-content-wrapper nav{
+    background: rgba(0,0,0,.7);
+    min-height: 7vh;
+
   }
 
   #wrapper.toggled #sidebar-wrapper {

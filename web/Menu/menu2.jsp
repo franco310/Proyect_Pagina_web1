@@ -12,35 +12,40 @@
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
 
   <!-- Custom styles for this template -->
   <link href="css/simple-sidebar.css" rel="stylesheet">
+  <link rel="stylesheet" href="font.css">
 
 </head>
 
 <body>
 
-  <div class="d-flex" id="wrapper">
 
-    <!-- Sidebar -->
-    <div class="bg-light border-right" id="sidebar-wrapper">
-      <div class="sidebar-heading">MENU</div>
-      <div class="list-group list-group-flush">
-        <a href="#" class="list-group-item list-group-item-action bg-light">INICIO</a>
-        <a href="../../Proyect_Pagina_web1/mod_inventario/productos/listarProducto.jsp" class="list-group-item list-group-item-action bg-light">PRODUCTOS</a>
-        <a href="../../Proyect_Pagina_web1/mod_inventario/cliente/listarCliente.jsp" class="list-group-item list-group-item-action bg-light">CLIENTES</a>
-        <a href="../../Proyect_Pagina_web1/mod_inventario/proveedor/listarProveedores.jsp" class="list-group-item list-group-item-action bg-light">PROVEEDORES</a>
-        <a href="../../Proyect_Pagina_web1/mod_inventario/usuario/listarUsuarios.jsp" class="list-group-item list-group-item-action bg-light">USUARIOS</a>
-        <a href="../../Proyect_Pagina_web1/mod_inventario/venta/listarVentas.jsp" class="list-group-item list-group-item-action bg-light">VENTAS</a>
-      </div>
-    </div>
-    <!-- /#sidebar-wrapper -->
+      <div class="d-flex" id="wrapper">
+          <!-- Sidebar -->
+          <div class="contenedor-from" id="sidebar-wrapper">
+            <div class="sidebar-heading">MENU</div>
+            <div class="list-group list-group-flush">
+              <ul>
+                <li><a href="#"><span class="icon-user"></span>Inicio1</a></li>
+                <li><a href="#"><span class="icon-cart"></span>Inicio2</a></li>
+                <li><a href="#"><span class="icon-users"></span>Inicio3</a></li>
+                <li><a href="#"><span class="icon-truck"></span>Inicio4</a></li>
+                <li><a href="#"><span class="icon-price-tags"></span>Inicio5</a></li>
+            </ul>
+            </div>
+          </div>
+          <!-- /#sidebar-wrapper -->
+
+  
 
     <!-- Page Content -->
     <div id="page-content-wrapper">
 
-      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-        <button class="btn btn-primary" id="menu-toggle">MENU DESPLEGABLE</button>
+      <nav>
+        <button class="btn btn-warning" id="menu-toggle">MENU DESPLEGABLE</button>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -49,7 +54,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="#">INICIO <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Link</a>
