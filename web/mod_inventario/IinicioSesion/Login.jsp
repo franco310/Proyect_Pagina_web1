@@ -35,10 +35,9 @@
                 <input type="password" class="form-control" placeholder="Contraseña" required id="contrasenia" name="contrasenia">                
                 <input type="text" class="form-control" placeholder="Cedula" required id="cedula" name="cedula">
               
-                <div class="modal-footer">
+                <div class="modal-footer" align="center">
                 <button  id="btn_guardar" name="btn_guardar" type="submit" class="btn btn-primary" >Guardar</button>
                 <div class="toggle2"><button  type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button></div>
-                 
                 </div>
             </form>
         </div>
