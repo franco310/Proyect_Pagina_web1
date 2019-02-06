@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Simple Sidebar - Start Bootstrap Template</title>
+  <title>Menú</title>
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -29,11 +29,11 @@
             <div class="sidebar-heading">MENU</div>
             <div class="list-group list-group-flush">
               <ul>
-                <li><a href="#"><span class="icon-user"></span>Inicio1</a></li>
-                <li><a href="#"><span class="icon-cart"></span>Inicio2</a></li>
-                <li><a href="#"><span class="icon-users"></span>Inicio3</a></li>
-                <li><a href="#"><span class="icon-truck"></span>Inicio4</a></li>
-                <li><a href="#"><span class="icon-price-tags"></span>Inicio5</a></li>
+                <li><a href="../../Proyect_Pagina_web1/index.html"><span class="icon-user"></span>Inicio</a></li>
+                <li><a href="../../Proyect_Pagina_web1/mod_inventario/productos/listarProducto.jsp"><span class="icon-cart"></span>Productos</a></li>
+                <li><a href="../../Proyect_Pagina_web1/mod_inventario/cliente/listarCliente.jsp"><span class="icon-users"></span>Clientes</a></li>
+                <li><a href="../../Proyect_Pagina_web1/mod_inventario/proveedor/listarProveedores.jsp"><span class="icon-truck"></span>Proveedores</a></li>
+                <li><a href="../../Proyect_Pagina_web1/mod_inventario/venta/listarVentas.jsp"><span class="icon-price-tags"></span>Ventas</a></li>
             </ul>
             </div>
           </div>
@@ -48,7 +48,7 @@
         <button class="btn btn-warning" id="menu-toggle">MENU DESPLEGABLE</button>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+          <span class="icon-user"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
