@@ -30,10 +30,10 @@
             <div class="list-group list-group-flush">
               <ul>
                 <li><a href="../../Proyect_Pagina_web1/index.html"><span class="icon-user"></span>Inicio</a></li>
-                <li><a href="../../Proyect_Pagina_web1/mod_inventario/productos/listarProducto.jsp"><span class="icon-cart"></span>Productos</a></li>
-                <li><a href="../../Proyect_Pagina_web1/mod_inventario/cliente/listarCliente.jsp"><span class="icon-users"></span>Clientes</a></li>
-                <li><a href="../../Proyect_Pagina_web1/mod_inventario/proveedor/listarProveedores.jsp"><span class="icon-truck"></span>Proveedores</a></li>
-                <li><a href="../../Proyect_Pagina_web1/mod_inventario/venta/listarVentas.jsp"><span class="icon-price-tags"></span>Ventas</a></li>
+                <li><a href="../../Proyect_Pagina_web1/mod_inventario/productos/Producto.jsp"><span class="icon-cart"></span>Productos</a></li>
+                <li><a href="../../Proyect_Pagina_web1/mod_inventario/cliente/Cliente.jsp"><span class="icon-users"></span>Clientes</a></li>
+                <li><a href="../../Proyect_Pagina_web1/mod_inventario/proveedor/Proveedores.jsp"><span class="icon-truck"></span>Proveedores</a></li>
+                <li><a href="../../Proyect_Pagina_web1/mod_inventario/venta/Ventas.jsp"><span class="icon-price-tags"></span>Ventas</a></li>
             </ul>
             </div>
           </div>
