@@ -17,74 +17,173 @@
   <!-- Custom styles for this template -->
   <link href="css/simple-sidebar.css" rel="stylesheet">
   <link rel="stylesheet" href="font.css">
+  
+  <link href="../vendor/bootstrap2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+  <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+  <link href="../vendor/morrisjs/morris.css" rel="stylesheet">
+  <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
 </head>
 
 <body>
+    
 
-
-      <div class="d-flex" id="wrapper">
+    
+    <div id="wrapper">
+        <div class="navbar-default sidebar" role="navigation">
+              <div class="d-flex" id="wrapper">
           <!-- Sidebar -->
           <div class="contenedor-from" id="sidebar-wrapper">
             <div class="sidebar-heading">MENU</div>
             <div class="list-group list-group-flush">
               <ul>
                 <li><a href="../../Proyect_Pagina_web1/index.html"><span class="icon-user"></span>Inicio</a></li>
-                <li><a href="../../Proyect_Pagina_web1/mod_inventario/productos/Producto.jsp"><span class="icon-cart"></span>Productos</a></li>
-                <li><a href="../../Proyect_Pagina_web1/mod_inventario/cliente/Cliente.jsp"><span class="icon-users"></span>Clientes</a></li>
-                <li><a href="../../Proyect_Pagina_web1/mod_inventario/proveedor/Proveedores.jsp"><span class="icon-truck"></span>Proveedores</a></li>
-                <li><a href="../../Proyect_Pagina_web1/mod_inventario/venta/Ventas.jsp"><span class="icon-price-tags"></span>Ventas</a></li>
+                <li><a href="../../Proyect_Pagina_web1/mod_inventario/productos/listar.jsp"><span class="icon-cart"></span>Productos</a></li>
+                <li><a href="../../Proyect_Pagina_web1/mod_inventario/cliente/listar.jsp"><span class="icon-users"></span>Clientes</a></li>
+                <li><a href="../../Proyect_Pagina_web1/mod_inventario/proveedor/listar.jsp"><span class="icon-truck"></span>Proveedores</a></li>
+                <li><a href="../../Proyect_Pagina_web1/mod_inventario/venta/listar.jsp"><span class="icon-price-tags"></span>Ventas</a></li>
             </ul>
             </div>
           </div>
-          <!-- /#sidebar-wrapper -->
 
-  
-
-    <!-- Page Content -->
-    <div id="page-content-wrapper">
-
-      <nav>
-        <button class="btn btn-warning" id="menu-toggle">MENU DESPLEGABLE</button>
-
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="icon-user"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">INICIO <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Dropdown
-              </a>
-              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </div>
-            </li>
-          </ul>
+  </div> 
         </div>
-      </nav>
-
-      <div class="container-fluid">
-        <h1 class="mt-4" align="center">Bienvenidos al sistema</h1>
         
-      </div>
+        
+        <ul class="nav navbar-top-links navbar-right"> 
+        <!-- /.dropdown -->
+        <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-user">
+                <li><a href="#"><i class="fa fa-user fa-fw"></i>Perfil de Usuario</a>
+                </li>
+                <li><a href="#"><i class="fa fa-gear fa-fw"></i> Configuraciones</a>
+                </li>
+                <li class="divider"></li>
+                <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Cerrar sesión</a>
+                </li>
+            </ul>
+            <!-- /.dropdown-user -->
+        </li>
+        <!-- /.dropdown -->
+    </ul>
+    
+ 
+    
+    
+    <div id="page-wrapper">
+        <nav>
+        <button class="btn btn-light" id="menu-toggle">MENU DESPLEGABLE</button>
+       </nav>
+        
+        
+        
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Tablas</h1>
+        </div>
+        <!-- /.col-lg-12 -->
     </div>
-    <!-- /#page-content-wrapper -->
+    <!-- /.row -->
+    <div class="row">
+        <div class="col-lg-3 col-md-6">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-comments fa-5x"></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+                            <div class="huge">26</div>
+                            <div>Productos</div>
+                        </div>
+                    </div>
+                </div>
+                <a href="../../Proyect_Pagina_web1/mod_inventario/productos/listar.jsp">
+                    <div class="panel-footer">
+                        <span class="pull-left">Ver Detalles</span>
+                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <div class="panel panel-green">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-tasks fa-5x"></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+                            <div class="huge">12</div>
+                            <div>Clientes</div>
+                        </div>
+                    </div>
+                </div>
+                <a href="../../Proyect_Pagina_web1/mod_inventario/cliente/listar.jsp">
+                    <div class="panel-footer">
+                        <span class="pull-left">Ver Detalles</span>
+                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <div class="panel panel-yellow">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-shopping-cart fa-5x"></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+                            <div class="huge">124</div>
+                            <div>Proveedores</div>
+                        </div>
+                    </div>
+                </div>
+                <a href="../../Proyect_Pagina_web1/mod_inventario/proveedor/listar.jsp">
+                    <div class="panel-footer">
+                        <span class="pull-left">Ver Detalles</span>
+                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <div class="panel panel-red">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-support fa-5x"></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+                            <div class="huge">13</div>
+                            <div>Support Tickets!</div>
+                        </div>
+                    </div>
+                </div>
+                <a href="#">
+                    <div class="panel-footer">
+                        <span class="pull-left">View Details</span>
+                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+        </div>
+        
+  </div>      
+    
 
-  </div>
-  <!-- /#wrapper -->
-
-  <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
