@@ -33,8 +33,8 @@ body {
     font-size: 12px;
     line-height: 25px;
     text-align: center;
-    border-top: 2px solid #ff851b;
-    border-bottom: 2px solid #ff851b;
+    border-top: 2px solid #8a8581;
+    border-bottom: 2px solid rgb(187, 184, 181);
     cursor: pointer;
     transition: all .5s ease;
 }
@@ -66,7 +66,7 @@ body {
     color: #fff;
     border: none;
     border-radius: 2px;
-    border-bottom: 4px solid #ff851b;
+    border-bottom: 4px solid rgb(187, 184, 181);
     box-sizing: border-box;
     font-family: Roboto;
     font-size: 14px;
@@ -81,8 +81,8 @@ body {
 }
 
 .contenedor-form input[type="submit"] {
-    background: #FF851B;
-    color: #FFF;
+    background: rgb(187, 184, 181);
+    color: rgb(8, 8, 8);
     width: 100%;
     border: none;
     padding: 10px 0;
