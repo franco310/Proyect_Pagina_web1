@@ -87,6 +87,9 @@
     <thead>
                 <th>Id</th>
                 <th>Nombre Producto</th>
+                <th>Categoria</th>
+                <th>Stok</th>
+                <th>Precio</th>
                 <th>Opciones</th>
                 </thead>
                 <tbody>
@@ -95,6 +98,9 @@
                 <tr>
                    <td><%= producto.getProductoid()%></td>
                     <td><%= producto.getNombreproducto()%></td>
+                    <td><%= producto.getCategoria()%></td>
+                    <td><%= producto.getStock()%></td>
+                    <td><%= producto.getPrecio()%></td>
                    
                    <td>
                          <a class="btn btn-danger" href='procesa_eliminar.jsp?codigo=<%= producto.getProductoid()%>' onclick="return confirm('¿Está seguro que desea eliminar este registro?');">Eliminar</a>
