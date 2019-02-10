@@ -40,19 +40,39 @@
         <div class="toggle">
             <span>Registrarse</span>
         </div>
-        
-        <div class="formulario">
-            
-            <h1 align="center" >
-                <img src="./img/inicio.png"/>
+         <h1 align="center" >
+                <img src="./img/bg2.jpg"/>
             </h1>
             <h2 align="center">Iniciar Sesión</h2>
-            <form action="#">
-                <input type="text" placeholder="Usuario" required>
-                <input type="password" placeholder="Contraseña" required>
-                <input type="submit" value="Iniciar Sesión">
-            </form>
-        </div>
+        <div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100 p-t-0 p-b-10">
+                            
+				<form role="form" action="procesalogin.jsp" target="sessionJsp">
+					<!--span class="login100-form-title p-b-120">
+						Bienvenido
+					</span-->					
+					<div class="wrap-input100 validate-input m-t-10 m-b-35" data-validate = "Ingrese usuario">
+						<input class="input100" type="text" name="nombre">
+						<span class="focus-input100" data-placeholder="Nombre usuario"></span>
+					</div>
+					<div class="wrap-input100 validate-input m-b-50" data-validate="Ingrese contraseña">
+						<input class="input100" type="password" name="clave">
+						<span class="focus-input100" data-placeholder="Contraseña"></span>
+					</div>
+					<div class="container-login100-form-btn">                                            
+						<button id="btn_guardar" name="btn_guardar" type="submit" class="login100-form-btn"  >Inicio de Sesión</button>
+					</div>
+
+					<ul class="login-more p-t-40">						
+						
+					</ul>
+				</form>
+			</div>
+		</div>
+	</div>
+        <!--div id="dropDownSelect1"></div-->
+        
         
         <div class="formulario">
             <h2>Crea tu Cuenta</h2>

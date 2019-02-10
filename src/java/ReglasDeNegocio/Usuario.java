@@ -162,10 +162,10 @@ public class Usuario {
           //CREAMOS EL ARRALIST DE PARAMETROS PARA ASIGANR A MI PRIMER COMANDO
           ArrayList<Parametro> parametros = new ArrayList<Parametro>();
           //llenamos el arraylist con todos los parametros
-          StringEncrypter encriptar = new StringEncrypter("Aplicaciones web");
-          String ppasw=encriptar.encrypt(usuario.getContrasenia());
+//          StringEncrypter encriptar = new StringEncrypter("Aplicaciones web");
+//          String ppasw=encriptar.encrypt(usuario.getContrasenia());
           parametros.add(new Parametro(1, usuario.getNombre_usuario()));
-          parametros.add(new Parametro(2, ppasw));
+          parametros.add(new Parametro(2, usuario.getContrasenia()));
           parametros.add(new Parametro(3, usuario.getCedula()));
           
 
@@ -254,6 +254,57 @@ public class Usuario {
       }
       return respuesta;
 
-  }
+  }   
+      public static Usuario usuario_buscar_por_credenciales(String pinombre_usuario, String picontrasenia) throws Exception
+    {
+         //CREO LISTA QUE RECIBIRA LOS DATOS DEL RESULSET
+       ArrayList<Usuario> lista= new ArrayList<Usuario>();
+       Usuario obj= new Usuario();
+       ResultSet rs= null;
+      //LLAMO LA CONEXION
+      Conexion con= new Conexion(Global.driver, Global.url, Global.user, Global.pass);
+      //DECLARO UN PREPAREDSTATEMENT QUE EJECUTARA LA SQL
+      PreparedStatement preStm= null;
+       
+      try {
+          //declaro mi sql
+          String sql= "select * from public.usuario_buscar_por_credenciales(?,?)";
+          //creo mi preparedstatement
+          preStm=con.creaPreparedSmt(sql);
+          //ejecuto el prepardestatement y le asigno a mi resulset
+          
+          /*StringEncrypter encriptar = new StringEncrypter("aplicaciones"); 
+          String pass = encriptar.encrypt(picontrasenia);*/
+          
+          preStm.setString(1, pinombre_usuario);
+          preStm.setString(2, picontrasenia);
+          rs= con.ejecutaPrepared(preStm);
+          obj=null;
+          while (rs.next()) {
+              obj= new Usuario();
+              obj.setUsuarioid(rs.getInt("pusuarioid"));
+              obj.setNombre_usuario(rs.getString("pnombre_usuario"));
+              obj.setContrasenia(rs.getString("pcontrasenia"));
+              obj.setCedula(rs.getString("pcedula"));
+              
+              lista.add(obj);
+          }
+      } catch (SQLException e) {
+          System.out.println(e.getMessage());
+      }
+      finally
+      {
+          rs.close();
+          preStm.close();
+          con.desconectar();
+      }
+            return obj;
+
+    }
+    
     
 }
+  
+
+    
+

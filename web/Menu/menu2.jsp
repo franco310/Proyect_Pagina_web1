@@ -1,3 +1,19 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="javax.servlet.ServletException"%>
+<%@page import="javax.servlet.http.HttpServlet"%>
+<%@page import="javax.servlet.http.HttpServletRequest"%>
+<%@page import="javax.servlet.http.HttpServletResponse"%>
+<%@page import="javax.servlet.http.HttpSession"%>
+<%
+  
+     String user = (String) request.getSession().getAttribute("nombre");
+     
+        if(user==null){
+            response.sendRedirect("../../index.html");
+        }
+ %>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +23,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Menú</title>
+  <title>MenÃº</title>
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -62,8 +78,13 @@
                 <li><a href="#"><i class="fa fa-gear fa-fw"></i> Configuraciones</a>
                 </li>
                 <li class="divider"></li>
-                <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Cerrar sesión</a>
-                </li>
+                 <li><a href="../../mod_inventario/IinicioSesion/cerrarsesion.jsp"><i class="fa fa-sign-out fa-fw"></i> salir</a>
+                 </li>
+                    
+                 
+                  
+              
+                
             </ul>
             <!-- /.dropdown-user -->
         </li>
