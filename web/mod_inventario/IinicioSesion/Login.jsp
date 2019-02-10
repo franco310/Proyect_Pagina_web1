@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css">
     <link href="css/simple-sidebar.css" rel="stylesheet">
     <link rel="stylesheet" href="font.css">
-     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
     
@@ -40,38 +40,35 @@
         <div class="toggle">
             <span>Registrarse</span>
         </div>
+        
+        <div class="formulario">
          <h1 align="center" >
-                <img src="./img/bg2.jpg"/>
+                <img src="./img/inicio.png"/>
             </h1>
+            
             <h2 align="center">Iniciar Sesión</h2>
-        <div class="limiter">
-		<div class="container-login100">
-			<div class="wrap-login100 p-t-0 p-b-10">
-                            
+ 
 				<form role="form" action="procesalogin.jsp" target="sessionJsp">
 					<!--span class="login100-form-title p-b-120">
 						Bienvenido
 					</span-->					
 					<div class="wrap-input100 validate-input m-t-10 m-b-35" data-validate = "Ingrese usuario">
-						<input class="input100" type="text" name="nombre">
+						<input class="input100" type="text" name="nombre" placeholder="Usuario" >
 						<span class="focus-input100" data-placeholder="Nombre usuario"></span>
 					</div>
 					<div class="wrap-input100 validate-input m-b-50" data-validate="Ingrese contraseña">
-						<input class="input100" type="password" name="clave">
+						<input class="input100" type="password" name="clave" placeholder="Contraseña" >
 						<span class="focus-input100" data-placeholder="Contraseña"></span>
 					</div>
-					<div class="container-login100-form-btn">                                            
-						<button id="btn_guardar" name="btn_guardar" type="submit" class="login100-form-btn"  >Inicio de Sesión</button>
-					</div>
+					
+                                        <h3 align="center">
+                                        <button id="btn_guardar" name="btn_guardar" type="submit" class="btn btn-info">Inicio de Sesión</button>
+				        </h3>
 
-					<ul class="login-more p-t-40">						
-						
-					</ul>
-				</form>
-			</div>
-		</div>
-	</div>
-        <!--div id="dropDownSelect1"></div-->
+				
+				</form>			
+                            </div>
+
         
         
         <div class="formulario">
@@ -81,10 +78,16 @@
                 <input type="password" class="form-control" placeholder="Contraseña" required id="contrasenia" name="contrasenia">                
                 <input type="text" class="form-control" placeholder="Cedula" required id="cedula" name="cedula">
               
-                <div class="modal-footer" align="center">
-                <button  id="btn_guardar" name="btn_guardar" type="submit" class="btn btn-primary" >Guardar</button>
-                <div class="toggle2"><button  type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button></div>
-                </div>
+                
+            
+                    <h4 align="center">
+                    <button  id="btn_guardar" name="btn_guardar" type="submit" class="btn btn-primary" >Guardar</button>
+                    </br></br>
+                     <div class="toggle2"><button  type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button></div>
+                    </h4>
+    
+               
+               
             </form>
         </div>
     </div>
