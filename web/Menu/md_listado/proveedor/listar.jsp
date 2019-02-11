@@ -66,7 +66,7 @@
                 <li><a href="/Proyect_Pagina_web1/Menu/menu2.jsp"><i class="fa fa-gear fa-fw"></i>Menu de Control</a>
                 </li>
                 <li class="divider"></li>
-                 <li><a href="../../mod_inventario/IinicioSesion/cerrarsesion.jsp"><i class="fa fa-sign-out fa-fw"></i> salir</a>
+                <li><a href="/Proyect_Pagina_web1/mod_inventario/IinicioSesion/Login.jsp"><i class="fa fa-sign-out fa-fw"></i> Cerrar sesión</a>
                 </li>
             </ul>
             <!-- /.dropdown-user -->
@@ -87,9 +87,6 @@
                 <th>Nombre Proveedor</th>
                 <th>Direccion Proveedor</th>
                 <th>Telefono Proveedor</th>
-                
-                
-                <th>Opciones</th>
                 </thead>
                 <tbody>
                <%while(itProveedor.hasNext()){

@@ -55,8 +55,8 @@
                 </li>
                 <li><a href="/Proyect_Pagina_web1/Menu/menu2.jsp"><i class="fa fa-gear fa-fw"></i>Menu de Control</a>
                 </li>
-                <li class="divider"></li>
-                 <li><a href="../../mod_inventario/IinicioSesion/cerrarsesion.jsp"><i class="fa fa-sign-out fa-fw"></i> salir</a>
+                 <li class="divider"></li>
+                <li><a href="/Proyect_Pagina_web1/mod_inventario/IinicioSesion/Login.jsp"><i class="fa fa-sign-out fa-fw"></i> Cerrar sesión</a>
                 </li>
             </ul>
             <!-- /.dropdown-user -->
@@ -81,7 +81,6 @@
                 <th>Precio unitario venta</th>                
                 <th>Fecha transaccion</th>
                 <th>Numero venta</th>               
-                <th>Opciones</th>
                 </thead>
                 <tbody>
                <%while(itVenta.hasNext()){

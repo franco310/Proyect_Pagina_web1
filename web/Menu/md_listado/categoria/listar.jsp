@@ -101,9 +101,7 @@
                 <th>Id</th>
                 <th>Nombre Categoria</th>
                 <th> Descripcion </th>
-              
-              
-                <th>Opciones</th>
+ 
                 </thead>
                 <tbody>
                <%while(itCategoria.hasNext()){
