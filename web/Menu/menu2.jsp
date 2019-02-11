@@ -9,7 +9,7 @@
      String user = (String) request.getSession().getAttribute("nombre");
      
         if(user==null){
-            response.sendRedirect("../../index.html");
+            response.sendRedirect("../../Proyect_Pagina_web1/1index.html");
         }
  %>
 

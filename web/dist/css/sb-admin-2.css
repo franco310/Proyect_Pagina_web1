@@ -19,6 +19,7 @@ body {
     position: inherit;
     margin: 0 0 0 250px;
     padding: 0 30px;
+    background: url(../img/bg2.jpg);
     border-left: 1px solid #131212;
   }
 }

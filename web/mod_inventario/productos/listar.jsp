@@ -90,7 +90,6 @@
                 <th>Categoria</th>
                 <th>Stok</th>
                 <th>Precio</th>
-                <th>Opciones</th>
                 </thead>
                 <tbody>
                <%while(itProducto.hasNext()){

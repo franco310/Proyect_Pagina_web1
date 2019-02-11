@@ -11,12 +11,13 @@
 <%
     try {
             Producto producto=new Producto();
-            producto.setNombreproducto(request.getParameter("nombreproducto"));
+            producto.setNombreproducto(request.getParameter("nombre_producto"));
             Categoria categoria = new Categoria();
             Categoria categorias = categoria.categoria_buscarporid(Integer.valueOf(request.getParameter("categoriaid")));
             producto.setCategoria(categorias);            
             producto.setStock(Integer.valueOf(request.getParameter("stock_producto")));
-            producto.setPrecio(Double.valueOf(request.getParameter("precio_producto")));                        
+            producto.setPrecio(Double.valueOf(request.getParameter("precio_producto")));       
+            producto.setProductoid(Integer.valueOf(request.getParameter("codigo")));
             
            boolean result= Producto.producto_editar(producto);
              if (result)

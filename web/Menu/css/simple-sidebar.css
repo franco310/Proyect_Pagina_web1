@@ -4,7 +4,7 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-simple-sidebar/blob/master/LICENSE)
  */
 body {
-
+ background: url(../img/bg2.jpg);
   background-size: cover;
   background-attachment: fixed;
   font-family: Roboto;

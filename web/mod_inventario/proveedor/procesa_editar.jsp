@@ -8,13 +8,12 @@
 <!DOCTYPE html>
 <%
     try {
-            Cliente cliente=new Cliente();
-            cliente.setNombres(request.getParameter("nombres_cliente"));
-            cliente.setApellidos(request.getParameter("apellidos_cliente"));
-            cliente.setTelefono(request.getParameter("telefono_cliente"));
-            cliente.setEmail(request.getParameter("email_cliente"));
-            cliente.setClienteid(Integer.valueOf(request.getParameter("codigo")));
-           boolean result= Cliente.cliente_editar(cliente);
+            Proveedor proveedor=new Proveedor();
+            proveedor.setNombreproveedor(request.getParameter("nombres_proveedor"));
+            proveedor.setDireccion(request.getParameter("direccion_proveedor"));
+            proveedor.setTelefono(request.getParameter("telefono_proveedor"));
+            proveedor.setProveedorid(Integer.valueOf(request.getParameter("codigo")));
+           boolean result= Proveedor.proveedor_editar(proveedor);
              if (result)
                 out.println("<script> location.replace('listar.jsp?alerta=si');</script>");
             else 

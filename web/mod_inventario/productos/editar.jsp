@@ -33,14 +33,14 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Editar Venta</title>
+        <title>Editar Producto</title>
      
     </head>
     
     <body>                    
           <form method="POST" action="procesa_editar.jsp">
           <input type="hidden" id="codigo" name="codigo" value="<%=producto.getProductoid()%>">  
-          <input type="text" required class="form-control" placeholder="Nombre producto" id="nombreproducto_producto" value="<%=producto.getNombreproducto()%>" name="nombreproducto"/>
+          <input type="text" required class="form-control" placeholder="Nombre producto" id="nombre_producto" value="<%=producto.getNombreproducto()%>" name="nombre_producto"/>
           <select required class="form-control" placeholder="Categoriaid" id="categoriaid" value="<%=producto.getCategoria()%>"  name="categoriaid">
           
             <%while(itCategoria.hasNext()){
@@ -49,8 +49,8 @@
             <% } %>
                                   
             </select> 
-          <input type="text" required class="form-control" placeholder="Stock Producto" id="stock producto" value="<%=producto.getStock()%>" name="stock_producto"/>
-          <input type="text" required class="form-control" placeholder="Precio Producto" id="precio producto" value="<%=producto.getPrecio()%>" name="precio_producto"/>
+          <input type="text" required class="form-control" placeholder="Stock Producto" id="stock_producto" value="<%=producto.getStock()%>" name="stock_producto"/>
+          <input type="text" required class="form-control" placeholder="Precio Producto" id="precio_producto" value="<%=producto.getPrecio()%>" name="precio_producto"/>
      
           
           
