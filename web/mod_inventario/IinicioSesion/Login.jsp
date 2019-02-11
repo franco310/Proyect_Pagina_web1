@@ -1,8 +1,7 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Iniciar sesiÃ³n</title>
+    <title>Iniciar sesión</title>
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css">
     <link href="css/simple-sidebar.css" rel="stylesheet">
@@ -35,7 +34,7 @@
     <div class="contenedor-form">
         
         <div class="toggle">
-            <span>RegÃ­strate</span>
+            <span>Regístrate</span>
         </div>
         
         <div class="formulario">
@@ -53,9 +52,9 @@
 						<input class="input100" type="text" name="nombre" placeholder="Ingrese su Usuario" >
 						<span class="focus-input100" data-placeholder="Nombre usuario"></span>
 					</div>
-					<div class="wrap-input100 validate-input m-b-50" data-validate="Ingrese contraseÃ±a">
-						<input class="input100" type="password" name="clave" placeholder="Ingrese su ContraseÃ±a" >
-						<span class="focus-input100" data-placeholder="ContraseÃ±a"></span>
+					<div class="wrap-input100 validate-input m-b-50" data-validate="Ingrese contraseña">
+						<input class="input100" type="password" name="clave" placeholder="Ingrese su Contraseña" >
+						<span class="focus-input100" data-placeholder="Contraseña"></span>
 					</div>
 					
                                         <h3 align="center">
@@ -72,8 +71,8 @@
             <h2>Crea tu cuenta</h2>
             <form method="POST" action="procesa_nuevo.jsp">
                 <input type="text" class="form-control" placeholder="Ingrese Un Nombre"  required id="nombre_usuario" name="nombre_usuario">
-                <input type="password" class="form-control" placeholder="Ingrese Una ContraseÃ±a" required id="contrasenia" name="contrasenia">                
-                <input type="text" class="form-control" placeholder="Cedula" required id="cedula" name="Ingrese su CÃ©dula">
+                <input type="password" class="form-control" placeholder="Ingrese Una Contraseña" required id="contrasenia" name="contrasenia">                
+                <input type="text" class="form-control" placeholder="Cedula" required id="cedula" name="Ingrese su Cédula">
               
                 
             
