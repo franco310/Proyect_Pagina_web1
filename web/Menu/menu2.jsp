@@ -55,6 +55,7 @@
               <ul>
                 <li><a href="../../Proyect_Pagina_web1/index.html"><span class="icon-user"></span>Inicio</a></li>
                 <li><a href="../../Proyect_Pagina_web1/mod_inventario/productos/listar.jsp"><span class="icon-cart"></span>Productos</a></li>
+                <li><a href="../../Proyect_Pagina_web1/mod_inventario/categoria/listar.jsp"><span class="icon-cart"></span>Categoria</a></li>
                 <li><a href="../../Proyect_Pagina_web1/mod_inventario/cliente/listar.jsp"><span class="icon-users"></span>Clientes</a></li>
                 <li><a href="../../Proyect_Pagina_web1/mod_inventario/proveedor/listar.jsp"><span class="icon-truck"></span>Proveedores</a></li>
                 <li><a href="../../Proyect_Pagina_web1/mod_inventario/venta/listar.jsp"><span class="icon-price-tags"></span>Ventas</a></li>
@@ -78,13 +79,9 @@
                 <li><a href="#"><i class="fa fa-gear fa-fw"></i> Configuraciones</a>
                 </li>
                 <li class="divider"></li>
-                 <li><a href="../../mod_inventario/IinicioSesion/cerrarsesion.jsp"><i class="fa fa-sign-out fa-fw"></i> salir</a>
+                 <li><a href="../../Proyect_Pagina_web1/mod_inventario/IinicioSesion/cerrarsesion.jsp"><i class="fa fa-sign-out fa-fw"></i> salir</a>
                  </li>
-                    
-                 
-                  
               
-                
             </ul>
             <!-- /.dropdown-user -->
         </li>
