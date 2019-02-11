@@ -119,9 +119,9 @@
                         </div>
                     </div>
                 </div>
-                <a href="../../Proyect_Pagina_web1/mod_inventario/productos/listar.jsp">
+                <a href="/Proyect_Pagina_web1/Menu/md_listado/productos/listar.jsp">
                     <div class="panel-footer">
-                        <span class="pull-left">Ver Detalles</span>
+                        <span class="pull-left">Ver Listado</span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                         <div class="clearfix"></div>
                     </div>
@@ -141,9 +141,9 @@
                         </div>
                     </div>
                 </div>
-                <a href="../../Proyect_Pagina_web1/mod_inventario/cliente/listar.jsp">
+                <a href="/Proyect_Pagina_web1/Menu/md_listado/cliente/listar.jsp">
                     <div class="panel-footer">
-                        <span class="pull-left">Ver Detalles</span>
+                        <span class="pull-left">Ver Listado</span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                         <div class="clearfix"></div>
                     </div>
@@ -163,9 +163,9 @@
                         </div>
                     </div>
                 </div>
-                <a href="../../Proyect_Pagina_web1/mod_inventario/proveedor/listar.jsp">
+                <a href="/Proyect_Pagina_web1/Menu/md_listado/proveedor/listar.jsp">
                     <div class="panel-footer">
-                        <span class="pull-left">Ver Detalles</span>
+                        <span class="pull-left">Ver Listado</span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                         <div class="clearfix"></div>
                     </div>
@@ -181,13 +181,13 @@
                         </div>
                         <div class="col-xs-9 text-right">
                             <div class="huge">13</div>
-                            <div>Support Tickets!</div>
+                            <div>Ventas</div>
                         </div>
                     </div>
                 </div>
-                <a href="#">
+                <a href="/Proyect_Pagina_web1/Menu/md_listado/venta/listar.jsp">
                     <div class="panel-footer">
-                        <span class="pull-left">View Details</span>
+                        <span class="pull-left">Ver listado</span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                         <div class="clearfix"></div>
                     </div>

@@ -1,0 +1,70 @@
+/*!
+ * Start Bootstrap - Simple Sidebar (https://startbootstrap.com/template-overviews/simple-sidebar)
+ * Copyright 2013-2019 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-simple-sidebar/blob/master/LICENSE)
+ */
+body {
+  background: url(../img/fondo.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: Roboto;
+  overflow-x: hidden;
+}
+
+ul{
+  
+float: right;
+}
+
+li a{
+  color: rgb(12, 12, 12);
+  padding: 20px;
+  display: block;
+
+  
+}
+li a:hover{
+  background: rgb(0, 0, 0, 7);
+  border-bottom: 4px solid #0075d9;
+}
+
+
+#sidebar-wrapper .sidebar-heading {
+  padding: 0.875rem 1.25rem;
+  font-size: 1.2rem;
+}
+
+#sidebar-wrapper .list-group {
+  width: 15rem;
+}
+
+#page-content-wrapper {
+  min-width: 100vw;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+  margin-left: 0;
+}
+
+@media (min-width: 768px) {
+  #sidebar-wrapper {
+    margin-left: 0;
+  }
+
+  #page-content-wrapper {
+    min-width: 0;
+    width: 100%;
+  }
+  #page-content-wrapper nav{
+    background: rgba(0,0,0,.7);
+    min-height: 9vh;
+
+  }
+
+  #wrapper.toggled #sidebar-wrapper {
+    margin-left: -15rem;
+  }
+  
+
+
+}
