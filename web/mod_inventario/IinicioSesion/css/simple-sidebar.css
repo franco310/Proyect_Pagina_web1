@@ -19,10 +19,7 @@ li a{
   display: block;
   
 }
-li a:hover{
-  background: rgb(187, 184, 181);
-  border-bottom: 4px solid #0075d9;
-}
+
 
 
 #sidebar-wrapper .sidebar-heading {
@@ -36,6 +33,10 @@ li a:hover{
 
 #page-content-wrapper {
   min-width: 100vw;
+}
+
+#page-content-wrapper nav span {
+  color: aliceblue;
 }
 
 #wrapper.toggled #sidebar-wrapper {
