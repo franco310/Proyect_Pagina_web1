@@ -13,7 +13,6 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        
     </head>
     <body>
         
@@ -21,7 +20,7 @@
           <form method="POST"  action="procesa_nuevo.jsp">
             <input type="text" class="form-control" placeholder="Nombre Cliente" required id="nombres_cliente" name="nombres_cliente"/>
             <input type="text" class="form-control" placeholder="Apellido Cliente" required id="apellidos_cliente" name="apellidos_cliente"/>
-            <input type="text" class="form-control" placeholder="Telefono Cliente" required id="telefono_cliente" name="telefono_cliente"/>
+            <input type="number" class="form-control" placeholder="Telefono Cliente" required id="telefono_cliente" name="telefono_cliente"/>
             <input type="text" class="form-control" placeholder="Email Cliente" required id="email_cliente" name="email_cliente"/>
             
             <div class="modal-footer">

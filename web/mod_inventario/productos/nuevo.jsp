@@ -29,8 +29,8 @@
                 <option value="<%=categoria.getCategoriaid()%>"><%=categoria.getNombre()%></option>
             <% } %>                             
             </select>
-            <input type="text" class="form-control" placeholder="Stock" required id="Stock" name="stock"/>
-             <input type="text" class="form-control" placeholder="Precio" required id="Precio" name="precio"/>
+            <input type="number" class="form-control" placeholder="Stock" required id="Stock" name="stock"/>
+             <input type="number" class="form-control" placeholder="Precio" required id="Precio" name="precio"/>
           
             
             

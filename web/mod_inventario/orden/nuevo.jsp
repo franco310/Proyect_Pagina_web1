@@ -37,9 +37,9 @@
             <option value="<%=producto.getProductoid()%>"><%=producto.getNombreproducto()%></option>
             <% } %>                             
             </select>            
-            <input type="text" class="form-control" placeholder="Cantidad" required id="cantidad" name="cantidad_orden"/>
-            <input type="text" class="form-control" placeholder="Precio unitario" required id="preciounitario" name="preciounitario_orden"/>            
-            <input type="text" class="form-control" placeholder="Numero orden" required id="numero_orden" name="numero_orden"/>
+            <input type="number" class="form-control" placeholder="Cantidad" required id="cantidad" name="cantidad_orden"/>
+            <input type="number" class="form-control" placeholder="Precio unitario" required id="preciounitario" name="preciounitario_orden"/>            
+            <input type="number" class="form-control" placeholder="Numero orden" required id="numero_orden" name="numero_orden"/>
             <input type="text" class="form-control" placeholder="Entregada" required id="entregada" name="entregada"/>          
             <input type="text" class="form-control" placeholder="Fecha entrega" required id="fecha_entrega" name="fecha_entrega"/>                   
             <div class="modal-footer">
