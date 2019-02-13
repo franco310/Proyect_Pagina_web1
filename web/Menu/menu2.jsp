@@ -59,6 +59,7 @@
                 <li><a href="../../Proyect_Pagina_web1/mod_inventario/cliente/listar.jsp"><span class="icon-users"></span>Clientes</a></li>
                 <li><a href="../../Proyect_Pagina_web1/mod_inventario/proveedor/listar.jsp"><span class="icon-truck"></span>Proveedores</a></li>
                 <li><a href="../../Proyect_Pagina_web1/mod_inventario/venta/listar.jsp"><span class="icon-price-tags"></span>Ventas</a></li>
+                <li><a href="../../Proyect_Pagina_web1/mod_inventario/orden/listar.jsp"><span class="icon-price-tags"></span>Orden</a></li>
             </ul>
             </div>
           </div>
